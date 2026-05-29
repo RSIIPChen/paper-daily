@@ -1,99 +1,95 @@
 {
-  "generated_at": "Fri, 29 May 2026 08:56:47 +0000",
-  "generated_at_iso": "2026-05-29T08:56:47.331479+00:00",
-  "config_source": "issue",
+  "generated_at": "Fri, 29 May 2026 13:16:21 +0000",
+  "generated_at_iso": "2026-05-29T13:16:21.335899+00:00",
+  "config_source": "file",
   "topics": [
     {
-      "id": "llm_low_precision_quantization",
-      "name": "大模型低精度量化",
-      "description": "关注大语言模型低比特量化、混合精度、量化感知训练、后训练量化、权重量化、激活量化、KV cache 量化以及量化对推理性能和精度的影响。",
+      "id": "remote_sensing_land_use",
+      "name": "遥感土地利用分类",
+      "description": "关注遥感影像土地利用土地覆盖分类、多光谱遥感、高分辨率遥感、SAR遥感、场景分类、语义分割和深度学习方法。",
       "keywords": [
-        "large language model quantization",
-        "LLM quantization",
-        "low-bit quantization",
-        "post-training quantization",
-        "weight-only quantization",
-        "activation quantization",
-        "mixed precision",
-        "FP8",
-        "INT4",
-        "INT8",
-        "KV cache quantization"
+        "remote sensing",
+        "land use classification",
+        "land cover classification",
+        "LULC",
+        "semantic segmentation",
+        "scene classification",
+        "multispectral image",
+        "hyperspectral image",
+        "SAR image",
+        "earth observation",
+        "satellite imagery",
+        "deep learning"
       ],
       "arxiv_categories": [
-        "cs.CL",
+        "cs.CV",
         "cs.LG",
-        "cs.AI",
-        "cs.DC"
+        "eess.IV"
       ]
     },
     {
-      "id": "tensor_compute_unit_architecture",
-      "name": "张量计算单元结构",
-      "description": "关注 GPU/NPU/TPU 张量计算单元、矩阵乘加阵列、数据流架构、片上存储层次、低精度张量核、AI 加速器微架构和算子映射。",
+      "id": "glacier_segmentation",
+      "name": "冰川分割与冰湖提取",
+      "description": "关注冰川边界提取、冰湖识别、积雪覆盖制图、冰川变化监测和深度学习分割模型。",
       "keywords": [
-        "tensor processing unit",
-        "tensor core",
-        "matrix multiply unit",
-        "systolic array",
-        "AI accelerator architecture",
-        "NPU architecture",
-        "GPU tensor core",
-        "low precision tensor compute",
-        "dataflow architecture",
-        "on-chip memory hierarchy"
+        "glacier segmentation",
+        "glacier extraction",
+        "glacier mapping",
+        "glacial lake",
+        "snow cover mapping",
+        "ice segmentation",
+        "remote sensing glacier",
+        "satellite image segmentation",
+        "U-Net",
+        "DeepLab",
+        "change detection"
       ],
       "arxiv_categories": [
-        "cs.AR",
-        "cs.DC",
+        "cs.CV",
         "cs.LG",
-        "cs.PF"
+        "eess.IV"
       ]
     },
     {
-      "id": "llm_inference_cluster_communication",
-      "name": "大模型推理集群通信优化",
-      "description": "关注分布式大模型推理、prefill/decode 分离、张量并行、流水并行、专家并行、跨节点通信、调度、负载均衡和 serving 系统吞吐延迟优化。",
+      "id": "foundation_models_remote_sensing",
+      "name": "遥感基础模型",
+      "description": "关注遥感大模型、视觉基础模型、SAM、GeoSAM、多模态遥感模型和遥感智能解译。",
       "keywords": [
-        "LLM inference serving",
-        "distributed inference",
-        "inference cluster",
-        "tensor parallelism",
-        "pipeline parallelism",
-        "expert parallelism",
-        "all-reduce",
-        "collective communication",
-        "prefill decode disaggregation",
-        "serving scheduler"
+        "foundation model",
+        "vision foundation model",
+        "remote sensing foundation model",
+        "segment anything",
+        "SAM",
+        "GeoSAM",
+        "multimodal remote sensing",
+        "vision transformer",
+        "self-supervised learning",
+        "earth observation foundation model"
       ],
       "arxiv_categories": [
-        "cs.DC",
-        "cs.PF",
-        "cs.CL",
-        "cs.LG"
+        "cs.CV",
+        "cs.LG",
+        "cs.AI"
       ]
     },
     {
-      "id": "kvcache_compression_storage_scheduling",
-      "name": "KV cache 压缩与存储调度",
-      "description": "关注大模型推理中的 KV cache 压缩、淘汰、分页、卸载、预取、层级存储、显存管理和长上下文推理效率优化。",
+      "id": "change_detection",
+      "name": "遥感变化检测",
+      "description": "关注多时相遥感变化检测、灾害监测、城市扩张监测和深度学习变化检测方法。",
       "keywords": [
-        "KV cache compression",
-        "KV cache eviction",
-        "KV cache scheduling",
-        "paged attention",
-        "attention cache",
-        "long context inference",
-        "memory offloading",
-        "GPU memory management",
-        "cache prefetching",
-        "LLM serving memory"
+        "change detection",
+        "remote sensing change detection",
+        "bi-temporal image",
+        "multi-temporal image",
+        "disaster monitoring",
+        "urban expansion",
+        "semantic change detection",
+        "transformer change detection"
       ],
       "arxiv_categories": [
-        "cs.CL",
+        "cs.CV",
         "cs.LG",
-        "cs.DC",
-        "cs.PF"
+        "eess.IV"
       ]
     }
   ],
@@ -184,6 +180,84 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2605.30168v1",
+      "source": "arXiv",
+      "title": "OmniCD: A Foundational Framework for Remote Sensing Image Change Detection Guided by Multimodal Semantics",
+      "authors": [
+        "Chenhao Sun"
+      ],
+      "summary": "Change detection (CD) in remote sensing is vital for applications such as urban monitoring and disaster assessment, yet traditional methods struggle with generalization across diverse scenarios. We present OmniCD, a foundational framework that unifies and enhances remote sensing CD through multimodal semantic guidance. OmniCD incorporates image and text prompts -- such as textual descriptions, semantic maps, and geospatial metadata -- into a unified architecture, supporting tasks from binary CD to zero-shot semantic change understanding. The framework integrates a hierarchical scene retrieval module and a change detection module, reinforced by a style disentanglement mechanism for improved cross-domain robustness. We further introduce RSITCD, a large-scale multimodal dataset with 300K+ annotated image-text pairs. Extensive experiments show that OmniCD achieves state-of-the-art performance across benchmarks, demonstrating strong adaptability and setting a solid foundation for general-purpose CD systems in remote sensing.",
+      "published": "2026-05-28T16:20:18Z",
+      "updated": "2026-05-28T16:20:18Z",
+      "paper_url": "http://arxiv.org/abs/2605.30168v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.30168v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "remote_sensing_land_use",
+      "matches": [
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.383,
+          "level": "low",
+          "reason": "关键词命中：change detection；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "change detection"
+          ]
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.28,
+          "level": "low",
+          "reason": "关键词命中：remote sensing；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "remote sensing"
+          ]
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.28,
+          "level": "low",
+          "reason": "关键词命中：change detection；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "change detection"
+          ]
+        },
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.208,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "change_detection",
+        "topic_name": "遥感变化检测",
+        "score": 0.383,
+        "level": "low",
+        "reason": "关键词命中：change detection；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "change detection"
+        ]
+      },
+      "chinese_summary": {
+        "problem": "未配置模型 API，当前仅基于标题、摘要和关键词生成基础摘要。",
+        "method": "Change detection (CD) in remote sensing is vital for applications such as urban monitoring and disaster assessment, yet traditional methods struggle with generalization across diverse scenarios.",
+        "innovation": "需要接入模型 API 后自动抽取更精确的中文创新点。",
+        "evidence": "来源摘要可在论文原文中核验。",
+        "limitations": "基础模式不会阅读全文，也不会进行深度技术对比。",
+        "why_relevant": "关键词命中：change detection；arXiv 分类重合：cs.CV"
+      },
+      "first_seen_at": "2026-05-29T13:16:21.335899+00:00",
+      "last_seen_at": "2026-05-29T13:16:21.335899+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2605.28488v1",
       "source": "arXiv",
       "title": "Bridging Maximum Likelihood and Optimal Transport for Efficient Inference and Model Selection in Stochastic Block Models",
@@ -262,30 +336,29 @@
     }
   ],
   "stats": {
-    "paper_count": 2,
-    "new_paper_count": 2,
+    "paper_count": 3,
+    "new_paper_count": 1,
     "days": 1,
     "collection_mode": "lookback",
-    "collection_cutoff_iso": "2026-05-27T13:18:49.361053+00:00",
+    "collection_cutoff_iso": "2026-05-28T13:16:21.335899+00:00",
     "max_per_topic": 25,
-    "llm_enabled": true,
+    "llm_enabled": false,
     "llm_concurrency": 2,
     "recent_history_days": 45,
-    "successful_fetches": 0,
-    "failed_fetches": 4,
+    "successful_fetches": 2,
+    "failed_fetches": 2,
     "retained_paper_count": 2,
     "retained_recent_low_count": 1,
     "dropped_low_relevance_count": 0,
     "max_stored_papers": 800,
     "max_data_bytes": 8388608,
-    "data_bytes": 15246,
+    "data_bytes": 18876,
     "storage_trimmed_count": 0,
     "storage_trimmed_by_level": {
       "high": 0,
       "medium": 0,
       "low": 0,
       "unknown": 0
-    },
-    "last_error": "All arXiv requests failed."
+    }
   }
 }
