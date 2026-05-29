@@ -1,77 +1,93 @@
 {
   "topics": [
     {
-      "id": "llm_low_precision_quantization",
-      "name": "大模型低精度量化",
-      "description": "关注大语言模型低比特量化、混合精度、量化感知训练、后训练量化、权重量化、激活量化、KV cache 量化以及量化对推理性能和精度的影响。",
+      "id": "remote_sensing_land_use",
+      "name": "遥感土地利用分类",
+      "description": "关注遥感影像土地利用土地覆盖分类、多光谱遥感、高分辨率遥感、SAR遥感、场景分类、语义分割和深度学习方法。",
       "keywords": [
-        "large language model quantization",
-        "LLM quantization",
-        "low-bit quantization",
-        "post-training quantization",
-        "weight-only quantization",
-        "activation quantization",
-        "mixed precision",
-        "FP8",
-        "INT4",
-        "INT8",
-        "KV cache quantization"
+        "remote sensing",
+        "land use classification",
+        "land cover classification",
+        "LULC",
+        "semantic segmentation",
+        "scene classification",
+        "multispectral image",
+        "hyperspectral image",
+        "SAR image",
+        "earth observation",
+        "satellite imagery",
+        "deep learning"
       ],
-      "arxiv_categories": ["cs.CL", "cs.LG", "cs.AI", "cs.DC"]
+      "arxiv_categories": [
+        "cs.CV",
+        "cs.LG",
+        "eess.IV"
+      ]
     },
     {
-      "id": "tensor_compute_unit_architecture",
-      "name": "张量计算单元结构",
-      "description": "关注 GPU/NPU/TPU 张量计算单元、矩阵乘加阵列、数据流架构、片上存储层次、低精度张量核、AI 加速器微架构和算子映射。",
+      "id": "glacier_segmentation",
+      "name": "冰川分割与冰湖提取",
+      "description": "关注冰川边界提取、冰湖识别、积雪覆盖制图、冰川变化监测和深度学习分割模型。",
       "keywords": [
-        "tensor processing unit",
-        "tensor core",
-        "matrix multiply unit",
-        "systolic array",
-        "AI accelerator architecture",
-        "NPU architecture",
-        "GPU tensor core",
-        "low precision tensor compute",
-        "dataflow architecture",
-        "on-chip memory hierarchy"
+        "glacier segmentation",
+        "glacier extraction",
+        "glacier mapping",
+        "glacial lake",
+        "snow cover mapping",
+        "ice segmentation",
+        "remote sensing glacier",
+        "satellite image segmentation",
+        "U-Net",
+        "DeepLab",
+        "change detection"
       ],
-      "arxiv_categories": ["cs.AR", "cs.DC", "cs.LG", "cs.PF"]
+      "arxiv_categories": [
+        "cs.CV",
+        "cs.LG",
+        "eess.IV"
+      ]
     },
     {
-      "id": "llm_inference_cluster_communication",
-      "name": "大模型推理集群通信优化",
-      "description": "关注分布式大模型推理、prefill/decode 分离、张量并行、流水并行、专家并行、跨节点通信、调度、负载均衡和 serving 系统吞吐延迟优化。",
+      "id": "foundation_models_remote_sensing",
+      "name": "遥感基础模型",
+      "description": "关注遥感大模型、视觉基础模型、SAM、GeoSAM、多模态遥感模型和遥感智能解译。",
       "keywords": [
-        "LLM inference serving",
-        "distributed inference",
-        "inference cluster",
-        "tensor parallelism",
-        "pipeline parallelism",
-        "expert parallelism",
-        "all-reduce",
-        "collective communication",
-        "prefill decode disaggregation",
-        "serving scheduler"
+        "foundation model",
+        "vision foundation model",
+        "remote sensing foundation model",
+        "segment anything",
+        "SAM",
+        "GeoSAM",
+        "multimodal remote sensing",
+        "vision transformer",
+        "self-supervised learning",
+        "earth observation foundation model"
       ],
-      "arxiv_categories": ["cs.DC", "cs.PF", "cs.CL", "cs.LG"]
+      "arxiv_categories": [
+        "cs.CV",
+        "cs.LG",
+        "cs.AI"
+      ]
     },
     {
-      "id": "kvcache_compression_storage_scheduling",
-      "name": "KV cache 压缩与存储调度",
-      "description": "关注大模型推理中的 KV cache 压缩、淘汰、分页、卸载、预取、层级存储、显存管理和长上下文推理效率优化。",
+      "id": "change_detection",
+      "name": "遥感变化检测",
+      "description": "关注多时相遥感变化检测、灾害监测、城市扩张监测和深度学习变化检测方法。",
       "keywords": [
-        "KV cache compression",
-        "KV cache eviction",
-        "KV cache scheduling",
-        "paged attention",
-        "attention cache",
-        "long context inference",
-        "memory offloading",
-        "GPU memory management",
-        "cache prefetching",
-        "LLM serving memory"
+        "change detection",
+        "remote sensing change detection",
+        "bi-temporal image",
+        "multi-temporal image",
+        "disaster monitoring",
+        "urban expansion",
+        "semantic change detection",
+        "transformer change detection"
       ],
-      "arxiv_categories": ["cs.CL", "cs.LG", "cs.DC", "cs.PF"]
+      "arxiv_categories": [
+        "cs.CV",
+        "cs.LG",
+        "eess.IV"
+      ]
     }
   ]
 }
