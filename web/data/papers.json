@@ -1,6 +1,6 @@
 {
-  "generated_at": "Fri, 28 Aug 2026 05:55:04 +0000",
-  "generated_at_iso": "2026-08-28T05:55:04.065300+00:00",
+  "generated_at": "Sat, 29 Aug 2026 03:27:26 +0000",
+  "generated_at_iso": "2026-08-29T03:27:26.631965+00:00",
   "config_source": "file",
   "topics": [
     {
@@ -609,7 +609,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.27162v1",
@@ -694,7 +694,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.06150v1",
@@ -864,7 +864,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.25485v1",
@@ -1207,7 +1207,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.05356v1",
@@ -1647,7 +1647,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.04791v1",
@@ -1895,7 +1895,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.06959v1",
@@ -2227,7 +2227,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.09853v1",
@@ -2816,7 +2816,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.25435v1",
@@ -3060,7 +3060,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.06028v1",
@@ -3715,7 +3715,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.09633v1",
@@ -5246,7 +5246,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.27214v1",
@@ -5325,7 +5325,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.26720v1",
@@ -5403,7 +5403,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.25893v1",
@@ -6627,7 +6627,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.27190v1",
@@ -6706,7 +6706,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.26983v1",
@@ -6786,7 +6786,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.26043v1",
@@ -7752,7 +7752,7 @@
       },
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.25371v1",
@@ -8080,22 +8080,22 @@
   ],
   "stats": {
     "paper_count": 97,
-    "new_paper_count": 17,
+    "new_paper_count": 0,
     "days": 1,
     "collection_mode": "incremental",
-    "collection_cutoff_iso": "2026-08-27T02:49:42.628753+00:00",
+    "collection_cutoff_iso": "2026-08-28T05:55:04.065300+00:00",
     "max_per_topic": 25,
     "llm_enabled": true,
     "llm_concurrency": 2,
     "recent_history_days": 45,
     "successful_fetches": 4,
     "failed_fetches": 0,
-    "retained_paper_count": 80,
-    "retained_recent_low_count": 59,
+    "retained_paper_count": 97,
+    "retained_recent_low_count": 70,
     "dropped_low_relevance_count": 0,
     "max_stored_papers": 800,
     "max_data_bytes": 8388608,
-    "data_bytes": 556891,
+    "data_bytes": 556873,
     "storage_trimmed_count": 0,
     "storage_trimmed_by_level": {
       "high": 0,
