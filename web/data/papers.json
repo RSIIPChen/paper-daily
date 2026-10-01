@@ -1,6 +1,6 @@
 {
-  "generated_at": "Wed, 30 Sep 2026 00:59:04 +0000",
-  "generated_at_iso": "2026-09-30T00:59:04.666902+00:00",
+  "generated_at": "Thu, 01 Oct 2026 01:01:37 +0000",
+  "generated_at_iso": "2026-10-01T01:01:37.915263+00:00",
   "config_source": "file",
   "topics": [
     {
@@ -1980,6 +1980,88 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2609.38811v1",
+      "source": "arXiv",
+      "title": "DCM-SAM: Defect-Conditioned Mixture of LoRA Experts for NPU-Deployed AM Defect Segmentation",
+      "authors": [
+        "Md Mushfiqur Rahaman",
+        "Md Mahedi Hasan",
+        "Imtiaz Ahmed",
+        "Srinjoy Das"
+      ],
+      "summary": "Metal additive manufacturing parts are inspected by X-ray computed tomography, where labelled data is scarce, the pores and inclusions that matter span a few pixels, and inspection must happen at the machine. We present DCM-SAM, a defect-conditioned adaptive mixture of LoRA experts: one frozen Segment Anything backbone carries a separate Conv-LoRA expert bank and mask decoder per defect class, each trained in its own pass, without prompts, on synthetic slices alone, updating only 4.4% of the parameters. On benchmarks that XCT-SAM reports, DCM-SAM improves on every baseline for both classes from a ViT-B backbone against their ViT-H, and reaches 64.2% pore IoU on real NIST scans having seen no real images during training. Deployment then exposes what adaptation work rarely measures: on a Qualcomm Hexagon NPU, ViT-H and ViT-L compile yet cannot allocate at 1024x1024 image resolution, since activations rather than weights exceed the device ceiling, and quantizing weights does not help. ViT-B alone runs, but the adapted encoder then fails to allocate where the stock one succeeds, until a numerically identical rewrite of the attention lets the complete DCM-SAM run in FP16 at 1024x1024, with no operator falling back to the CPU, masks within 0.01% of pixels of the FP32 reference. Code: https://github.com/MushfiqShovon/DCM-SAM.",
+      "published": "2026-09-30T02:42:03Z",
+      "updated": "2026-09-30T02:42:03Z",
+      "paper_url": "http://arxiv.org/abs/2609.38811v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.38811v1",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.385,
+          "level": "low",
+          "reason": "关键词命中：segment anything、SAM；arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": [
+            "segment anything",
+            "SAM"
+          ],
+          "llm_reason": "论文以Segment Anything（SAM）为冻结骨干，采用LoRA参数高效适配与多专家混合，并研究ViT-B/L/H在边缘NPU上的部署可行性，这些与遥感基础模型关注的SAM/GeoSAM适配、视觉基础模型轻量化与边缘部署、参数高效微调等主题在方法层面高度相通，可作为遥感大模型在算力受限场景落地的技术参考。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.229,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.229,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.198,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.385,
+        "level": "low",
+        "reason": "关键词命中：segment anything、SAM；arXiv 分类重合：cs.CV、cs.LG",
+        "keyword_hits": [
+          "segment anything",
+          "SAM"
+        ],
+        "llm_reason": "论文以Segment Anything（SAM）为冻结骨干，采用LoRA参数高效适配与多专家混合，并研究ViT-B/L/H在边缘NPU上的部署可行性，这些与遥感基础模型关注的SAM/GeoSAM适配、视觉基础模型轻量化与边缘部署、参数高效微调等主题在方法层面高度相通，可作为遥感大模型在算力受限场景落地的技术参考。"
+      },
+      "chinese_summary": {
+        "problem": "金属增材制造零件需通过X射线CT检测，但标注数据稀缺、关键孔隙与夹杂仅几个像素，且检测需在设备端（机上）完成，现有分割方法难以在数据受限与边缘NPU算力约束下同时满足精度与部署要求。",
+        "method": "提出DCM-SAM，基于冻结的Segment Anything骨干，为每个缺陷类别配备独立的Conv-LoRA专家库与掩码解码器，分轮次训练、无需提示、仅用合成切片，只更新4.4%参数；并针对Qualcomm Hexagon NPU做注意力算子的数值等价重写，使完整模型以FP16在1024x1024分辨率运行。",
+        "innovation": "1) 将缺陷类别条件化的LoRA专家混合（MoE）引入SAM，实现按缺陷类别的参数高效适配，仅训练4.4%参数且无需提示；2) 仅用合成切片训练即可在真实NIST扫描上取得64.2%孔隙IoU，展现合成到真实的泛化；3) 首次系统揭示NPU部署中激活值（而非权重）超出设备上限导致ViT-H/ViT-L无法分配的问题，并通过数值等价的注意力重写使ViT-B版DCM-SAM在FP16下完整运行、无算子回退CPU。",
+        "evidence": "在XCT-SAM报告的基准上，DCM-SAM以ViT-B骨干在所有基线上对两类缺陷均有提升（对比其ViT-H）；在未见真实图像训练的情况下，于真实NIST扫描上达到64.2%孔隙IoU；部署实验显示ViT-H与ViT-L在1024x1024下可编译但无法分配内存，量化权重无效，ViT-B可运行但适配后编码器分配失败，经注意力重写后完整模型FP16运行、无CPU回退、掩码与FP32参考差异在0.01%像素以内。",
+        "limitations": "摘要未给出与XCT-SAM对比的完整定量表格、其他缺陷类别的具体IoU数值及统计显著性；合成数据生成方式与真实域差距未说明；NPU实验仅限Qualcomm Hexagon单一平台，未验证其他边缘硬件；‘数值等价重写’的通用性与对训练稳定性的影响需阅读全文确认；与遥感基础模型的直接关联有限，属SAM在工业检测与边缘部署的迁移应用。",
+        "why_relevant": "论文以Segment Anything（SAM）为冻结骨干，采用LoRA参数高效适配与多专家混合，并研究ViT-B/L/H在边缘NPU上的部署可行性，这些与遥感基础模型关注的SAM/GeoSAM适配、视觉基础模型轻量化与边缘部署、参数高效微调等主题在方法层面高度相通，可作为遥感大模型在算力受限场景落地的技术参考。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2608.25410v1",
       "source": "arXiv",
       "title": "Token-Oriented Semantic Communication with Pretrained Vision Transformers",
@@ -2800,6 +2882,86 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2609.38930v1",
+      "source": "arXiv",
+      "title": "On the Relaxation of Conditional Independence Assumption for Image Segmentation",
+      "authors": [
+        "Zixun Wang",
+        "Ben Dai"
+      ],
+      "summary": "In semantic segmentation, a recent line of RankSEG methods directly optimizes Dice/IoU scores at inference time, improving alignment with evaluation metrics without modifying model training. Despite its theoretical and empirical success, RankSEG relies on the restrictive Conditional Independence Assumption (CIA), which ignores crucial label correlations and therefore degrades performance in ambiguous or low-contrast scenarios. However, accounting for full label dependence is computationally prohibitive, requiring $\\mathcal{O}(d^3)$ time. To address this, we replace the CIA with a Spatially Localized Dependence (SLD) structure that captures local label correlations while keeping the dependence model tractable. We further overcome the remaining computational bottleneck via a Reciprocal Moment Approximation coupled with a novel fixed-point optimization strategy that eliminates exhaustive search. The proposed algorithm achieves a highly practical $\\mathcal{O}(d \\log d)$ complexity and consistently outperforms conventional argmax and CIA-based RankSEG across diverse segmentation benchmarks. Improvements are significant in low-contrast or small-object scenarios, where label dependence offers valuable signals complementary to image information for accurate segmentation. The code of experiments is available at https://github.com/ZixunWang/RankSEG-DEP.",
+      "published": "2026-09-30T04:10:57Z",
+      "updated": "2026-09-30T04:10:57Z",
+      "paper_url": "http://arxiv.org/abs/2609.38930v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.38930v1",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "seed_topic": "remote_sensing_land_use",
+      "matches": [
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.3,
+          "level": "low",
+          "reason": "关键词命中：semantic segmentation；arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": [
+            "semantic segmentation"
+          ],
+          "llm_reason": "论文属于语义分割方法研究，与研究方向中的语义分割、深度学习方法直接相关，其推理阶段优化思路可迁移至遥感土地利用分类中的分割任务，尤其可能有助于低对比度或小目标地物（如细小地块、稀疏地物）的分割。但论文未涉及遥感影像、多光谱/高光谱/SAR 数据，匹配度有限。"
+        },
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.281,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.AI、cs.CV、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.229,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.229,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "remote_sensing_land_use",
+        "topic_name": "遥感土地利用分类",
+        "score": 0.3,
+        "level": "low",
+        "reason": "关键词命中：semantic segmentation；arXiv 分类重合：cs.CV、cs.LG",
+        "keyword_hits": [
+          "semantic segmentation"
+        ],
+        "llm_reason": "论文属于语义分割方法研究，与研究方向中的语义分割、深度学习方法直接相关，其推理阶段优化思路可迁移至遥感土地利用分类中的分割任务，尤其可能有助于低对比度或小目标地物（如细小地块、稀疏地物）的分割。但论文未涉及遥感影像、多光谱/高光谱/SAR 数据，匹配度有限。"
+      },
+      "chinese_summary": {
+        "problem": "语义分割中 RankSEG 方法依赖条件独立假设（CIA），忽略标签相关性，在模糊或低对比度场景下性能下降；而建模完整标签依赖计算代价过高（O(d^3)）。",
+        "method": "用空间局部依赖（SLD）结构替代 CIA 以捕捉局部标签相关性，并通过倒数矩近似与不动点优化策略消除穷举搜索，将复杂度降至 O(d log d)。",
+        "innovation": "1) 以空间局部依赖结构替代条件独立假设，在可计算的前提下引入标签相关性；2) 提出倒数矩近似结合不动点优化，避免穷举搜索，实现 O(d log d) 实用复杂度；3) 在低对比度与小目标场景中相对 argmax 和基于 CIA 的 RankSEG 取得一致提升。",
+        "evidence": "摘要称在多种分割基准上一致优于传统 argmax 与基于 CIA 的 RankSEG，低对比度或小目标场景提升显著；理论层面给出 O(d log d) 复杂度分析。但摘要未提供具体数据集名称、量化指标数值与消融细节。",
+        "limitations": "摘要未说明 SLD 的具体空间邻域定义与超参数敏感性；未给出具体基准数据集、评价指标数值和统计显著性；O(d log d) 的实际常数与可扩展性需阅读全文确认；是否在遥感影像上验证未知。",
+        "why_relevant": "论文属于语义分割方法研究，与研究方向中的语义分割、深度学习方法直接相关，其推理阶段优化思路可迁移至遥感土地利用分类中的分割任务，尤其可能有助于低对比度或小目标地物（如细小地块、稀疏地物）的分割。但论文未涉及遥感影像、多光谱/高光谱/SAR 数据，匹配度有限。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2608.27367v1",
       "source": "arXiv",
       "title": "Successive Capacity Growth: Task-Complexity-Driven Width and Depth Expansion for Vision Transformer Encoders in JEPA World Models",
@@ -3459,6 +3621,251 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2609.38908v1",
+      "source": "arXiv",
+      "title": "CellMSA: Context Modeling for Single-Cell Representation Learning",
+      "authors": [
+        "Suyuan Zhao",
+        "Minghao Liu",
+        "Yizhen Luo",
+        "Zaiqing Nie"
+      ],
+      "summary": "Single-cell transcriptomics enables profiling of cellular states at unprecedented resolution, but its high dimensionality, sparsity, and technical batch effects pose significant challenges for representation learning. Existing single-cell foundation models typically encode each cell independently or only model cells from the same batch for denoising, thereby underutilizing the rich relational information across batches and cell types to model gene expression patterns. We argue that single-cell models can benefit from more informative cell-context modeling. By comparing consistency and variation across cells, models can capture fine-grained gene-gene dependencies associated with cell states, which are essential for learning high-quality representations. Inspired by the use of multiple sequence alignment (MSA) context in protein modeling, we propose CellMSA, a single-cell representation learning framework that introduces an MSA-inspired inductive bias into transcriptomic modeling. For each target cell, CellMSA retrieves relevant cells from different batches and biologically related cell types as context, and summarizes cross-cell patterns into a context-dependent gene-pair representation. This representation is then injected into a pair-aware target-cell encoder for fine-grained representation learning. We pretrain CellMSA on a large-scale human single-cell corpus of approximately 109 million cell observations, including 65.6 million primary observations. Experiments show that our framework consistently outperforms existing methods across multiple benchmarks. Code is available at the following repository: https://github.com/PharMolix/CellMSA.",
+      "published": "2026-09-30T03:55:27Z",
+      "updated": "2026-09-30T03:55:27Z",
+      "paper_url": "http://arxiv.org/abs/2609.38908v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.38908v1",
+      "categories": [
+        "q-bio.GN",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.235,
+          "level": "low",
+          "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.AI、cs.LG",
+          "keyword_hits": [
+            "foundation model",
+            "SAM"
+          ],
+          "llm_reason": "该论文与我的遥感基础模型方向关联很弱：它属于单细胞转录组基础模型，核心是 MSA 启发的上下文建模与 pair-aware 编码器，不涉及遥感、视觉基础模型、SAM/GeoSAM、多模态遥感或遥感智能解译。基础匹配仅来自关键词 foundation model 与 arXiv 分类 cs.AI/cs.LG 的重合，属于方法层面的泛化相似（基础模型预训练、上下文建模），而非领域相关。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.235,
+        "level": "low",
+        "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.AI、cs.LG",
+        "keyword_hits": [
+          "foundation model",
+          "SAM"
+        ],
+        "llm_reason": "该论文与我的遥感基础模型方向关联很弱：它属于单细胞转录组基础模型，核心是 MSA 启发的上下文建模与 pair-aware 编码器，不涉及遥感、视觉基础模型、SAM/GeoSAM、多模态遥感或遥感智能解译。基础匹配仅来自关键词 foundation model 与 arXiv 分类 cs.AI/cs.LG 的重合，属于方法层面的泛化相似（基础模型预训练、上下文建模），而非领域相关。"
+      },
+      "chinese_summary": {
+        "problem": "单细胞转录组数据具有高维、稀疏和批次效应强的特点，现有单细胞基础模型通常独立编码每个细胞或仅对同批次细胞去噪，未能充分利用跨批次与跨细胞类型的关系信息来建模基因表达模式。",
+        "method": "提出 CellMSA 框架，受蛋白质建模中多序列比对（MSA）上下文启发，为每个目标细胞从不同批次和生物学相关细胞类型中检索相关细胞作为上下文，将跨细胞模式汇总为依赖上下文的基因对表示，并注入 pair-aware 目标细胞编码器进行细粒度表示学习；在约 1.09 亿个细胞观测（含 6560 万原始观测）的人类单细胞语料上预训练。",
+        "innovation": "1）将蛋白质建模中的 MSA 上下文归纳偏置引入单细胞转录组建模，用跨批次、跨细胞类型的相关细胞作为上下文，而非独立编码或仅同批次去噪；2）通过比较细胞间一致性与变异，捕获与细胞状态相关的细粒度基因-基因依赖，并汇总为上下文相关的基因对表示；3）设计 pair-aware 目标细胞编码器，将该上下文表示注入目标细胞表示学习。",
+        "evidence": "摘要称在约 1.09 亿细胞观测（含 6560 万原始观测）的人类单细胞语料上预训练，并在多个基准上一致优于现有方法；提供了代码仓库链接。未给出具体基准名称、指标数值或消融实验细节。",
+        "limitations": "摘要未说明具体基准数据集、评价指标和提升幅度，也未给出与单细胞基础模型（如 scBERT、Geneformer 等）的定量对比；MSA 式上下文检索的检索策略、计算开销与可扩展性需阅读全文确认；论文未涉及遥感或视觉基础模型，跨领域迁移性未验证。",
+        "why_relevant": "该论文与我的遥感基础模型方向关联很弱：它属于单细胞转录组基础模型，核心是 MSA 启发的上下文建模与 pair-aware 编码器，不涉及遥感、视觉基础模型、SAM/GeoSAM、多模态遥感或遥感智能解译。基础匹配仅来自关键词 foundation model 与 arXiv 分类 cs.AI/cs.LG 的重合，属于方法层面的泛化相似（基础模型预训练、上下文建模），而非领域相关。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
+      "id": "2609.38755v1",
+      "source": "arXiv",
+      "title": "Agentic Relative Camera Pose Estimation via Learned Ranking and Verification",
+      "authors": [
+        "Zhining Gu",
+        "Shangjie Du",
+        "Weimin Qiu",
+        "Carl Olsson",
+        "Ping Liu",
+        "Meng Tang"
+      ],
+      "summary": "A wide range of approaches have been developed for camera pose estimation, including correspondence-based methods, end-to-end pose regression, and recent 3D geometric foundation models. Our key observation is that no single estimator is optimal for diverse challenges, such as wide baselines, lack of texture, appearance changes, and occlusions. Further analysis reveals substantial performance variation across both benchmarks and individual image pairs, with different estimators exhibiting complementary strengths. We introduce PoseAgent, an agentic framework for relative camera pose estimation that dynamically orchestrates pose estimators through learnable ranking and verification. Given an image pair, a profiling agent first extracts appearance, semantic, and geometric features relevant to pose estimation, e.g., scene type. A learned ranking agent then predicts the relative competence of multiple pose estimators given the image-pair profile. The top-ranked estimator is executed, and its predicted pose is assessed by a learned verification agent that estimates the corresponding pose error. When verification fails, PoseAgent adaptively invokes lower-ranked estimators until a candidate is accepted or the execution budget is reached. For pose verification, our verification network predicts pose errors more accurately than prior models. For pose estimation, PoseAgent improves AUC@5 degree up to 4.2% over the strongest standalone estimator on each of ARKitScenes, MegaDepth, ScanNet++, and RealEstate10K. On ARKitScenes, PoseAgent also outperforms VLM-based agents, which include a VLM ranker with the same verifier and fallback policy. These results demonstrate the effectiveness of our learned ranking and verification.",
+      "published": "2026-09-30T01:42:00Z",
+      "updated": "2026-09-30T01:42:00Z",
+      "paper_url": "http://arxiv.org/abs/2609.38755v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.38755v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.221,
+          "level": "low",
+          "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "foundation model",
+            "SAM"
+          ],
+          "llm_reason": "论文属于计算机视觉中的相机位姿估计与几何基础模型应用，涉及基础模型/估计器的组合与验证，与遥感基础模型方向在视觉基础模型、多模态特征和智能解译的通用方法层面有间接关联，但并非直接面向遥感或 SAM/GeoSAM 等遥感基础模型。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.208,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.221,
+        "level": "low",
+        "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "foundation model",
+          "SAM"
+        ],
+        "llm_reason": "论文属于计算机视觉中的相机位姿估计与几何基础模型应用，涉及基础模型/估计器的组合与验证，与遥感基础模型方向在视觉基础模型、多模态特征和智能解译的通用方法层面有间接关联，但并非直接面向遥感或 SAM/GeoSAM 等遥感基础模型。"
+      },
+      "chinese_summary": {
+        "problem": "论文解决的是相对相机位姿估计中，单一估计器难以应对宽基线、弱纹理、外观变化和遮挡等多样挑战的问题，因为不同估计器在不同基准和图像对上表现差异大且具有互补优势。",
+        "method": "提出 PoseAgent 智能体框架：先由 profiling agent 提取图像对的外观、语义和几何特征，再由可学习排序 agent 预测多个位姿估计器的相对能力，执行最高排名估计器，并用可学习验证 agent 估计位姿误差，验证失败时按排名回退到较低排名估计器，直到接受候选或达到执行预算。",
+        "innovation": "1) 将相对相机位姿估计建模为可学习的估计器动态编排问题，而非依赖单一估计器；2) 引入基于图像对 profile 的学习排序机制来预测多个估计器的相对能力；3) 设计学习验证网络来估计位姿误差，并配合自适应回退策略，在验证失败时调用较低排名估计器。",
+        "evidence": "摘要报告：在 ARKitScenes、MegaDepth、ScanNet++ 和 RealEstate10K 上，PoseAgent 相比每个数据集上最强的独立估计器将 AUC@5 degree 提升最多 4.2%；在 ARKitScenes 上还优于使用相同验证器和回退策略的 VLM 排序器基线；验证网络比先前模型更准确地预测位姿误差。",
+        "limitations": "摘要未说明 profiling agent 的具体特征、排序与验证网络的结构和训练方式，也未给出计算开销、执行预算设置、跨数据集泛化细节及失败案例；这些需要阅读全文确认。",
+        "why_relevant": "论文属于计算机视觉中的相机位姿估计与几何基础模型应用，涉及基础模型/估计器的组合与验证，与遥感基础模型方向在视觉基础模型、多模态特征和智能解译的通用方法层面有间接关联，但并非直接面向遥感或 SAM/GeoSAM 等遥感基础模型。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
+      "id": "2609.38744v1",
+      "source": "arXiv",
+      "title": "Molecular Property Prediction under Structural Shift with Tabular Foundation Models",
+      "authors": [
+        "Jinmo Lee",
+        "Dooho Lee",
+        "Minho Jeong",
+        "Jaemin Yoo"
+      ],
+      "summary": "Predicting molecular properties for compounds that differ structurally from labeled training molecules is important for drug discovery and materials design. Tabular foundation models (TFMs) offer a promising approach through in-context learning, but their performance under structural shifts and the value of molecular comparisons in this setting remain underexplored. We study structural generalization in molecular property prediction and introduce MolPAIR (Molecular Pair-Augmented In-context Refinement), a framework that combines molecule-level and molecular-pair contexts without task-specific parameter updates. A global tabular foundation model (TFM) first predicts a query's property from labeled molecular examples. A second frozen TFM predicts differences in prediction errors between the query and labeled reference molecules, using these comparisons to refine the initial prediction. Across 58 MoleculeACE and Polaris tasks, CheMeleon representations combined with TabPFN-3 already outperform each evaluated baseline on a majority of tasks. MOLPAIR further improves this predictor on 46 of 58 tasks, with gains across four molecular representations and three TFM backbones. These results show that explicit molecular comparisons can strengthen tabular in-context learning for structural generalization while keeping the molecular encoder and pretrained model weights fixed. The code and datasets are available at https://github.com/nums-ai/MolPAIR.",
+      "published": "2026-09-30T01:28:28Z",
+      "updated": "2026-09-30T01:28:28Z",
+      "paper_url": "http://arxiv.org/abs/2609.38744v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.38744v1",
+      "categories": [
+        "cs.LG"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.217,
+          "level": "low",
+          "reason": "关键词命中：foundation model；arXiv 分类重合：cs.LG",
+          "keyword_hits": [
+            "foundation model"
+          ],
+          "llm_reason": "论文核心是基础模型（foundation model）与上下文学习，与我的研究方向在“基础模型”这一关键词上重合，且同属 cs.LG 分类；但其应用领域为分子性质预测，使用的是表格基础模型（TabPFN 类）而非视觉/遥感基础模型，不涉及 SAM、GeoSAM、多模态遥感或遥感智能解译，方法层面的可迁移性有限。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.217,
+        "level": "low",
+        "reason": "关键词命中：foundation model；arXiv 分类重合：cs.LG",
+        "keyword_hits": [
+          "foundation model"
+        ],
+        "llm_reason": "论文核心是基础模型（foundation model）与上下文学习，与我的研究方向在“基础模型”这一关键词上重合，且同属 cs.LG 分类；但其应用领域为分子性质预测，使用的是表格基础模型（TabPFN 类）而非视觉/遥感基础模型，不涉及 SAM、GeoSAM、多模态遥感或遥感智能解译，方法层面的可迁移性有限。"
+      },
+      "chinese_summary": {
+        "problem": "论文研究分子性质预测中的结构泛化问题：当待预测化合物与有标签训练分子在结构上存在差异（结构偏移）时，如何仍能准确预测其性质，并探讨分子间比较在此场景下的价值。",
+        "method": "提出 MolPAIR（Molecular Pair-Augmented In-context Refinement）框架：先用一个全局表格基础模型（TFM）基于有标签分子示例对查询分子做上下文学习预测，再用第二个冻结的 TFM 预测查询分子与参考分子之间的预测误差差异，通过这种分子对比较来精炼初始预测，全程不更新任务特定参数。",
+        "innovation": "1) 将表格基础模型的上下文学习用于分子性质预测的结构偏移场景，并系统评估其泛化能力；2) 提出分子对增强的上下文精炼机制，把分子级上下文与分子对级比较上下文结合，用误差差异比较来修正预测；3) 在保持分子编码器与预训练模型权重完全冻结的前提下实现性能提升，无需任务特定参数更新。",
+        "evidence": "在 58 个 MoleculeACE 与 Polaris 任务上，CheMeleon 表示结合 TabPFN-3 已在多数任务上超过所评估的基线；MolPAIR 在 58 个任务中的 46 个上进一步改进该预测器，且增益在四种分子表示和三种 TFM 骨干上均成立。",
+        "limitations": "摘要未说明结构偏移的具体定义与度量方式、任务划分细节、基线集合的完整构成，也未给出具体数值指标与统计显著性；分子对比较的额外计算开销、对参考分子选择的敏感性、以及方法是否可迁移到其他领域（如遥感）均需阅读全文确认。",
+        "why_relevant": "论文核心是基础模型（foundation model）与上下文学习，与我的研究方向在“基础模型”这一关键词上重合，且同属 cs.LG 分类；但其应用领域为分子性质预测，使用的是表格基础模型（TabPFN 类）而非视觉/遥感基础模型，不涉及 SAM、GeoSAM、多模态遥感或遥感智能解译，方法层面的可迁移性有限。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2608.27278v1",
       "source": "arXiv",
       "title": "Decoupled I/O-Dominant Pipelines for Large-Scale Whole-Slide Image Embedding Extraction",
@@ -4027,6 +4434,344 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2609.38747v1",
+      "source": "arXiv",
+      "title": "Consensus-Aware Multi-Source Fusion for Reference-Guided Camouflaged Object Detection",
+      "authors": [
+        "Junyang Xia",
+        "Luocheng Zhang",
+        "Wenwen Pan",
+        "Chifeng Zhu",
+        "Yang Yang",
+        "Xinchun Liu",
+        "Jiajun Ding"
+      ],
+      "summary": "Reference-guided camouflaged object detection aims to segment a target whose visual appearance closely resembles its surroundings by exploiting auxiliary reference samples. The task remains difficult because reference samples contain inconsistent target cues, while generic visual representations are not inherently aligned with the target specified by the references. To handle these problems, we present a consensus-aware multi-source fusion framework. Reference-Conditioned Dual-Backbone Fusion (RCDF) couples trainable PVTv2 query features with frozen DINOv3 representations and uses reference-conditioned correlation to select foundation-model evidence before multi-scale fusion. The framework also aggregates multiple references through cross-reference consensus aggregation and injects reference information at semantic depths matched to the query features. Extensive experiments demonstrate the effectiveness of the proposed method. The results further show that reference consensus, target-conditioned foundation features, and hierarchical decoding provide complementary improvements under the evaluation protocol. The source code will be made publicly available upon acceptance.",
+      "published": "2026-09-30T01:31:22Z",
+      "updated": "2026-09-30T01:31:22Z",
+      "paper_url": "http://arxiv.org/abs/2609.38747v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.38747v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.212,
+          "level": "low",
+          "reason": "关键词命中：SAM；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "SAM"
+          ],
+          "llm_reason": "论文涉及视觉基础模型（DINOv3）的冻结特征利用、多源融合与参考条件特征选择，与遥感基础模型、视觉基础模型及多模态遥感模型的研究方向在方法层面有交集，但任务本身为伪装目标检测，并非遥感场景，且未涉及SAM、GeoSAM或遥感专用基础模型。"
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.177,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.212,
+        "level": "low",
+        "reason": "关键词命中：SAM；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "SAM"
+        ],
+        "llm_reason": "论文涉及视觉基础模型（DINOv3）的冻结特征利用、多源融合与参考条件特征选择，与遥感基础模型、视觉基础模型及多模态遥感模型的研究方向在方法层面有交集，但任务本身为伪装目标检测，并非遥感场景，且未涉及SAM、GeoSAM或遥感专用基础模型。"
+      },
+      "chinese_summary": {
+        "problem": "参考引导的伪装目标检测旨在利用辅助参考样本分割与周围环境视觉上高度相似的目标，但参考样本包含不一致的目标线索，且通用视觉表示与参考指定的目标并不天然对齐。",
+        "method": "提出共识感知多源融合框架：参考条件双骨干融合（RCDF）将可训练PVTv2查询特征与冻结DINOv3表示耦合，通过参考条件相关性选择基础模型证据后进行多尺度融合；同时通过跨参考共识聚合整合多个参考，并在与查询特征匹配的语义深度注入参考信息。",
+        "innovation": "1）利用参考条件相关性从冻结基础模型（DINOv3）中选择目标相关证据，而非直接使用通用视觉表示；2）通过跨参考共识聚合处理参考样本线索不一致的问题；3）在语义深度匹配查询特征处注入参考信息，实现层次化解码与多源融合。",
+        "evidence": "摘要称大量实验证明了方法的有效性，并表明参考共识、目标条件基础特征和层次化解码在评估协议下提供互补改进；源代码将在接收后公开。未提供具体数据集、指标数值或消融实验细节。",
+        "limitations": "摘要未说明具体数据集、评价指标、与现有方法的定量对比及消融实验细节；未明确DINOv3是否为遥感领域基础模型，也未讨论跨域泛化能力；源代码尚未公开，无法验证实现细节。",
+        "why_relevant": "论文涉及视觉基础模型（DINOv3）的冻结特征利用、多源融合与参考条件特征选择，与遥感基础模型、视觉基础模型及多模态遥感模型的研究方向在方法层面有交集，但任务本身为伪装目标检测，并非遥感场景，且未涉及SAM、GeoSAM或遥感专用基础模型。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
+      "id": "2609.39116v1",
+      "source": "arXiv",
+      "title": "GRC-Pose: Generation-Reconstruction Correspondence for Prior-Free 6D Object Pose Tracking",
+      "authors": [
+        "Shiyang Liu",
+        "Weiquan Lin",
+        "Luping Xiao",
+        "Jiadong Tang",
+        "Yi Yang",
+        "Yu Gao",
+        "Xingyu Chen"
+      ],
+      "summary": "Prior-free 6D object pose tracking seeks to recover the trajectory of an unseen object from a single RGB video without object-specific CAD models, posed reference images, or pose annotations. Geometric foundation models provide complementary object-centric and scene-centric cues, yet SAM3D CAD is indexed by an arbitrary object-local surface parameterization, whereas reconstructed evidence is expressed in a sequence-specific world frame with partial surface coverage. To exploit this complementarity, we formulate tracking as generation-reconstruction correspondence and introduce GRC-Pose, a correspondence-based framework that combines learned correspondence prediction with robust pose estimation. Concretely, GeoCorr-Matcher estimates weighted object-scene correspondences and per-match uncertainty for each pose candidate. FGH-Solver integrates these matches through multiple robust geometric estimators and sequence-level posterior inference, while a posterior-gated memory retains only inlier-supported observations through occlusion and viewpoint change. Extensive evaluation shows that with SAM3D CAD, GRC-Pose achieves state-of-the-art Average Recall and motion retention on HOT3D, improving the latter by 58% over prior art. On classical benchmarks including YCBInEOAT and LINEMOD, it remains highly competitive.",
+      "published": "2026-09-30T06:53:31Z",
+      "updated": "2026-09-30T06:53:31Z",
+      "paper_url": "http://arxiv.org/abs/2609.39116v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.39116v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.19,
+          "level": "low",
+          "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "foundation model",
+            "SAM"
+          ],
+          "llm_reason": "论文使用几何基础模型（SAM3D CAD）作为核心组件，属于基础模型在3D/机器人视觉中的应用，与遥感基础模型方向在“基础模型+下游几何/跟踪任务”的方法论上有交集；但其任务为6D物体姿态跟踪，并非遥感或地球观测场景，也未涉及遥感多模态、自监督预训练或遥感智能解译，因此相关性有限。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.19,
+        "level": "low",
+        "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "foundation model",
+          "SAM"
+        ],
+        "llm_reason": "论文使用几何基础模型（SAM3D CAD）作为核心组件，属于基础模型在3D/机器人视觉中的应用，与遥感基础模型方向在“基础模型+下游几何/跟踪任务”的方法论上有交集；但其任务为6D物体姿态跟踪，并非遥感或地球观测场景，也未涉及遥感多模态、自监督预训练或遥感智能解译，因此相关性有限。"
+      },
+      "chinese_summary": {
+        "problem": "论文解决无先验6D物体姿态跟踪问题：在仅有单目RGB视频、没有物体CAD模型、已标定参考图像或姿态标注的情况下，恢复未见物体的运动轨迹。",
+        "method": "将跟踪建模为生成-重建对应（generation-reconstruction correspondence），提出GRC-Pose框架：GeoCorr-Matcher估计带权重的物体-场景对应及每个匹配的不确定性，FGH-Solver通过多种鲁棒几何估计器与序列级后验推断整合匹配，并用后验门控记忆在遮挡和视角变化下仅保留内点支持的观测。",
+        "innovation": "1）提出生成-重建对应这一新表述，将几何基础模型的物体中心线索（SAM3D CAD的物体局部表面参数化）与场景中心线索（序列特定世界坐标系下的重建证据）显式对齐；2）设计GeoCorr-Matcher输出加权对应与逐匹配不确定性，并配合FGH-Solver的多鲁棒估计器与序列级后验推断；3）引入后验门控记忆机制，在遮挡与视角变化下维持跟踪鲁棒性。",
+        "evidence": "摘要报告：使用SAM3D CAD时，在HOT3D上取得最优Average Recall与motion retention，后者较先前工作提升58%；在YCBInEOAT和LINEMOD等经典基准上保持高度竞争力。",
+        "limitations": "摘要未给出具体数值、对比方法细节、失败案例与计算开销；未说明对SAM3D CAD的依赖程度、无CAD场景下的表现、以及后验门控记忆在长期遮挡下的失效条件，需阅读全文确认。",
+        "why_relevant": "论文使用几何基础模型（SAM3D CAD）作为核心组件，属于基础模型在3D/机器人视觉中的应用，与遥感基础模型方向在“基础模型+下游几何/跟踪任务”的方法论上有交集；但其任务为6D物体姿态跟踪，并非遥感或地球观测场景，也未涉及遥感多模态、自监督预训练或遥感智能解译，因此相关性有限。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
+      "id": "2609.39010v1",
+      "source": "arXiv",
+      "title": "An Uncertainty-Guided Digital Twin Framework for Online Adaptive Proton Therapy in Head and Neck Cancer: A Feasibility Study",
+      "authors": [
+        "Yizhou Wu",
+        "Ryan J. Sanford",
+        "Huiqiao Xie",
+        "Jie Ding",
+        "Shupeng Chen",
+        "Tung-Ho Wu",
+        "Ping-Hsiu Wu",
+        "Justin Roper",
+        "Jun Zhou",
+        "Minglei Kang",
+        "Bill Stokes",
+        "Sibo Tian",
+        "David S. Yu",
+        "Xiaofeng Yang",
+        "Chih-Wei Chang"
+      ],
+      "summary": "Objective: Head and neck (HN) proton therapy spans six to seven weeks of anatomical change, while offline replanning takes about a week. We present an uncertainty-guided digital twin (UGDT) framework that forecasts treatment-day anatomy before treatment and evaluate whether it generates online adaptive proton therapy (APT) plans of clinical quality. Approach: A library of 302 longitudinal deformations from 88 previously treated HN patients was transported onto each new patient's treatment planning CT (TPCT) using two-step multi-atlas deformable image registration (DIR) built on a pretrained CT foundation model, generating about 284 predicted CTs (pdCTs) with contours per patient. Dispersion of propagated clinical target volume (CTV) contours defined a patient-specific robust margin. In ten patients, the quality assurance CT (QACT) triggering a replan represented treatment-day anatomy, and the physician-approved replan was the baseline. The pdCT most similar to the QACT (pdCT-H) and one from the lowest quartile (pdCT-L) were planned to within about 5% of baseline plan quality, forward-calculated on the QACT, and reoptimized to generate online APT plans. Main results: pdCT plans scored within -0.7% (pdCT-H) and -1.0% (pdCT-L) of baseline. Forward calculation on QACT reduced high-dose CTV D98% to 88.3% and 85.5%. After online reoptimization, D98% recovered to 98.3 +/- 0.3% and 98.2 +/- 0.3%, versus 98.5 +/- 0.4% at baseline. Spinal cord and brainstem doses remained below tolerance, and plan quality scores were within -1.1% (p = 0.19) and -1.7% (p = 0.01) of baseline. Significance: UGDT generated online APT plans comparable in quality to physician-approved offline replans using anatomy forecast before treatment, enabling a transition from reactive offline replanning toward anticipatory online adaptation.",
+      "published": "2026-09-30T05:18:18Z",
+      "updated": "2026-09-30T05:18:18Z",
+      "paper_url": "http://arxiv.org/abs/2609.39010v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.39010v1",
+      "categories": [
+        "physics.med-ph",
+        "cs.AI"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.186,
+          "level": "low",
+          "reason": "关键词命中：foundation model；arXiv 分类重合：cs.AI",
+          "keyword_hits": [
+            "foundation model"
+          ],
+          "llm_reason": "论文使用了预训练CT基础模型进行可变形图像配准，属于视觉基础模型在医学影像中的应用，与遥感基础模型在方法论上有共通之处（基础模型、自监督/预训练表征、多模态配准），但应用领域为医学物理而非遥感，因此匹配度有限。"
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.094,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.062,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.031,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.186,
+        "level": "low",
+        "reason": "关键词命中：foundation model；arXiv 分类重合：cs.AI",
+        "keyword_hits": [
+          "foundation model"
+        ],
+        "llm_reason": "论文使用了预训练CT基础模型进行可变形图像配准，属于视觉基础模型在医学影像中的应用，与遥感基础模型在方法论上有共通之处（基础模型、自监督/预训练表征、多模态配准），但应用领域为医学物理而非遥感，因此匹配度有限。"
+      },
+      "chinese_summary": {
+        "problem": "头颈部质子治疗期间解剖结构会持续变化，离线重新计划耗时约一周，无法及时适应治疗当天的解剖变化，因此需要一种能在治疗前预测当天解剖并生成在线自适应质子治疗计划的方法。",
+        "method": "构建不确定性引导的数字孪生（UGDT）框架：利用基于预训练CT基础模型的两步多图谱可变形图像配准，将302个纵向形变库迁移到新患者的计划CT上，生成约284个预测CT及轮廓；通过传播的CTV轮廓离散度定义患者特异性稳健边界，并对与QA CT最相似的预测CT进行计划、前向计算和在线再优化。",
+        "innovation": "1）提出不确定性引导的数字孪生框架，在治疗前预测治疗当天解剖并生成在线自适应质子治疗计划；2）利用预训练CT基础模型驱动的多图谱可变形配准构建患者特异性形变预测；3）用CTV轮廓离散度定义患者特异性稳健边界，实现从被动离线再计划向主动在线适应的转变。",
+        "evidence": "在10例患者中，预测CT计划质量在基线-0.7%（pdCT-H）和-1.0%（pdCT-L）以内；在QA CT上前向计算使高剂量CTV D98%降至88.3%和85.5%，在线再优化后恢复至98.3±0.3%和98.2±0.3%，基线为98.5±0.4%；脊髓和脑干剂量低于耐受限；计划质量评分在基线-1.1%（p=0.19）和-1.7%（p=0.01）以内。",
+        "limitations": "研究为可行性研究，仅纳入10例患者，样本量小；预测CT与QA CT的相似性选择及最低四分位选择可能引入偏倚；未说明基础模型的具体架构、预训练数据及泛化能力；长期临床获益和更大规模验证需阅读全文确认。",
+        "why_relevant": "论文使用了预训练CT基础模型进行可变形图像配准，属于视觉基础模型在医学影像中的应用，与遥感基础模型在方法论上有共通之处（基础模型、自监督/预训练表征、多模态配准），但应用领域为医学物理而非遥感，因此匹配度有限。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
+      "id": "2609.38956v1",
+      "source": "arXiv",
+      "title": "Routing Probes Can Improve Without New Information: An Exact-Null Audit of Uncertainty Beyond Model Outputs",
+      "authors": [
+        "Wenhao Liang",
+        "Lin Yue",
+        "Wei Emma Zhang",
+        "Mingyu Guo",
+        "Olaf Maennel",
+        "Weitong Chen"
+      ],
+      "summary": "Routing signals of modern vision transformers -- expert gates, attention-residual weights and halting scores -- often improve probes that predict whether the model is correct, and the improvement is commonly read as evidence that routing carries information about errors beyond the model's outputs. We test this inference directly: keeping real output-routing pairs, we redraw correctness labels from a frozen output-only generator fitted on disjoint data, so that routing is uninformative by construction. Under this exact label null, a width-matched MLP comparison still reports a routing gain in 51.3% of confidence-only evaluations (308/600), while a linear comparison reports none. Holding each training trajectory fixed on a six-model panel and selecting the checkpoint by validation log loss instead of validation accuracy removes the detections (50/120 to 0/120, and 83/120 to 0/120 in an independently implemented probe), identifying accuracy-based checkpoint selection as the cause; across all output views the raw detection rate falls from 27.5% (528/1,920) to zero observed detections. The repaired comparison is not sensitive, detecting an implanted signal of about 0.005 nats in 0/20 replicates in each of two matched settings, whereas a conditional permutation test built on an estimated routing law detects it in 11/20 and 10/20 and rejects rarely under the null. On real correctness labels, the conditional analysis yields model-relative evidence in five DeiT attention-residual families; in four it persists under two specified variants of the conditional law, and no family passes an additional noise criterion. Fitting a better probe and testing for incremental information are different problems, and each needs its own validation.",
+      "published": "2026-09-30T04:22:18Z",
+      "updated": "2026-09-30T04:22:18Z",
+      "paper_url": "http://arxiv.org/abs/2609.38956v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.38956v1",
+      "categories": [
+        "cs.AI"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.186,
+          "level": "low",
+          "reason": "关键词命中：vision transformer；arXiv 分类重合：cs.AI",
+          "keyword_hits": [
+            "vision transformer"
+          ],
+          "llm_reason": "该论文研究视觉Transformer内部路由信号（注意力残差权重等）与正确性预测的关系，属于视觉基础模型可解释性与不确定性评估范畴，与我的视觉基础模型、vision transformer、自监督学习方向有方法论上的关联；但它不涉及遥感数据、遥感基础模型、SAM/GeoSAM或多模态遥感，因此匹配度有限。"
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.031,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.031,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.0,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.186,
+        "level": "low",
+        "reason": "关键词命中：vision transformer；arXiv 分类重合：cs.AI",
+        "keyword_hits": [
+          "vision transformer"
+        ],
+        "llm_reason": "该论文研究视觉Transformer内部路由信号（注意力残差权重等）与正确性预测的关系，属于视觉基础模型可解释性与不确定性评估范畴，与我的视觉基础模型、vision transformer、自监督学习方向有方法论上的关联；但它不涉及遥感数据、遥感基础模型、SAM/GeoSAM或多模态遥感，因此匹配度有限。"
+      },
+      "chinese_summary": {
+        "problem": "论文要解决的问题是：视觉Transformer的路由信号（专家门控、注意力残差权重、停止分数）常被认为能提供模型输出之外的错误信息，从而提升正确性预测探针，但这一推断缺乏严格检验。",
+        "method": "作者构造“精确标签零假设”：保留真实输出-路由配对，但从仅基于输出的冻结生成器（在不相交数据上拟合）重新抽取正确性标签，使路由在构造上无信息；随后比较宽度匹配的MLP与线性探针，并改变检查点选择准则（验证对数损失 vs 验证准确率）来审计检测来源。",
+        "innovation": "一是提出精确标签零假设来直接检验“路由携带输出之外错误信息”的推断，而非仅报告探针性能提升；二是发现基于准确率的检查点选择是虚假路由增益的根源，改用验证对数损失后检测率从27.5%降至零；三是区分“拟合更好探针”与“检验增量信息”两个不同问题，并指出修复后的比较缺乏检测植入信号的敏感性。",
+        "evidence": "摘要给出可核验数据：在置信度-only评估中宽度匹配MLP报告路由增益51.3%（308/600），线性比较无增益；六模型面板上固定训练轨迹、按验证对数损失选检查点后，检测从50/120降至0/120，独立实现探针从83/120降至0/120；所有输出视图下原始检测率从27.5%（528/1,920）降至零观测检测；修复比较对约0.005 nats植入信号在两组匹配设置中各0/20检出，而条件置换检验分别检出11/20和10/20；真实标签上条件分析在五个DeiT注意力残差家族给出模型相对证据，其中四个在两种条件律变体下持续，但无家族通过额外噪声准则。",
+        "limitations": "摘要未说明路由信号是否在真实任务上具有任何增量价值，仅报告条件分析在五个DeiT家族中有模型相对证据且无家族通过噪声准则；实验限于视觉Transformer与DeiT注意力残差家族，未涉及遥感数据或遥感基础模型；条件置换检验依赖估计的路由律，其正确性需全文确认；修复后的比较敏感性低，可能掩盖真实但微弱的信号。",
+        "why_relevant": "该论文研究视觉Transformer内部路由信号（注意力残差权重等）与正确性预测的关系，属于视觉基础模型可解释性与不确定性评估范畴，与我的视觉基础模型、vision transformer、自监督学习方向有方法论上的关联；但它不涉及遥感数据、遥感基础模型、SAM/GeoSAM或多模态遥感，因此匹配度有限。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2608.27358v1",
       "source": "arXiv",
       "title": "RCMN: Understanding Misleadingness in Influential Public Discourse",
@@ -4425,6 +5170,97 @@
       "first_seen_at": "2026-08-27T02:49:42.628753+00:00",
       "last_seen_at": "2026-08-27T02:49:42.628753+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2609.39018v1",
+      "source": "arXiv",
+      "title": "Make Code as Policy Great Again: Frontier Agents Write, Call, and Evolve Robot Tools",
+      "authors": [
+        "Shijia Ge",
+        "Alex Zhou",
+        "Jianshu Zeng",
+        "Yexing Wan",
+        "Di Wu",
+        "Zelin Zheng",
+        "Yazhe Wang",
+        "Zhiqi Jia",
+        "Xuan Shangguan",
+        "Jay Zhu",
+        "Yijun Liu",
+        "Lingyu He",
+        "Sihang Wu",
+        "Xiao He",
+        "Hongcheng Gao"
+      ],
+      "summary": "Frontier models can control robots, but reasoning through every reach, grasp, and retreat makes manipulation slow and token-intensive. We revisit code as policy with a different division of labor: models build executable tools, code handles multi-phase motions, and models decide what to do next. We introduce URAI (Universal Robot-Agent Interface), which couples a programming agent that constructs robot tools with an execution agent that uses them in a feedback loop. The programming agent writes reusable and task-specific tools from task intent and refines them through execution feedback and human guidance. The execution agent selects and parameterizes these tools from current observations; each call runs a complete motion locally before returning control to the agent. Unlike delegating subsequent decisions to a generated program, this design retains model-level decision-making between tool executions. Validated tool revisions persist across episodes without updating foundation-model weights, and a shared GUI and API make the same tools available to humans and agents. Across five RoboDojo tasks and four frozen execution agents, URAI raises aggregate success from 18.0% to 53.0% relative to direct fingertip control, with the largest gain on Swap Blocks; with the same tools, a program written in advance reaches only 24% against 56% for two agents deciding after each call. Three of the four agents also finish episodes 1.3-1.5 times faster with 1.5-1.7 times fewer execution-agent output tokens; DeepSeek-V4-Flash's cost barely changes. We further evaluate URAI on seven real-world AgileX dual-arm tasks, spanning object manipulation, cloth folding, and human-interactive tic-tac-toe. URAI connects the coding and decision-making capabilities of frontier agents, organizing robot control around reusable tools that agents can both invoke and revise.",
+      "published": "2026-09-30T05:23:25Z",
+      "updated": "2026-09-30T05:23:25Z",
+      "paper_url": "http://arxiv.org/abs/2609.39018v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.39018v1",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.181,
+          "level": "low",
+          "reason": "关键词命中：SAM；arXiv 分类重合：cs.AI",
+          "keyword_hits": [
+            "SAM"
+          ],
+          "llm_reason": "该论文聚焦机器人智能体与代码工具，与遥感基础模型、SAM、GeoSAM、多模态遥感模型等研究方向基本无关；仅因摘要中“SAM”关键词命中（可能为误匹配）及 arXiv 分类 cs.AI 重合而被基础匹配系统关联，实际研究内容不涉及遥感或视觉基础模型。"
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.031,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.0,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.0,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.181,
+        "level": "low",
+        "reason": "关键词命中：SAM；arXiv 分类重合：cs.AI",
+        "keyword_hits": [
+          "SAM"
+        ],
+        "llm_reason": "该论文聚焦机器人智能体与代码工具，与遥感基础模型、SAM、GeoSAM、多模态遥感模型等研究方向基本无关；仅因摘要中“SAM”关键词命中（可能为误匹配）及 arXiv 分类 cs.AI 重合而被基础匹配系统关联，实际研究内容不涉及遥感或视觉基础模型。"
+      },
+      "chinese_summary": {
+        "problem": "前沿模型虽能控制机器人，但逐步推理每个伸展、抓取和回退动作导致操作缓慢且消耗大量 token，需要一种更高效的机器人控制分工方式。",
+        "method": "提出 URAI（Universal Robot-Agent Interface），将编程智能体与执行智能体耦合：编程智能体根据任务意图编写可复用、任务专用的机器人工具，并通过执行反馈和人工指导进行精炼；执行智能体从当前观测中选择并参数化这些工具，每次调用在本地完成完整动作后再将控制权交回智能体。",
+        "innovation": "一是重新审视“代码即策略”，将模型职责限定为构建可执行工具与决定下一步做什么，而由代码处理多阶段运动，避免将后续决策完全委托给生成程序；二是通过执行反馈与人工指导持续精炼工具，验证过的工具修订可跨回合持久化，且无需更新基础模型权重；三是提供共享 GUI 和 API，使同一套工具可同时供人类与智能体使用。",
+        "evidence": "在五个 RoboDojo 任务和四个冻结执行智能体上，URAI 将总体成功率从直接指尖控制的 18.0% 提升至 53.0%，在 Swap Blocks 上增益最大；使用相同工具时，预先写好的程序仅达 24%，而两个智能体在每次调用后决策达到 56%；四个智能体中有三个完成回合快 1.3-1.5 倍，执行智能体输出 token 少 1.5-1.7 倍，DeepSeek-V4-Flash 的成本几乎不变；另在七个真实 AgileX 双臂任务（物体操作、叠布、人机交互井字棋）上进行了评估。",
+        "limitations": "摘要未说明工具精炼的自动化程度与人工指导依赖程度、跨任务泛化边界、真实世界任务的具体成功率与失败模式，也未涉及与遥感或视觉基础模型的关联；需阅读全文确认工具表示形式、反馈循环的稳定性及计算开销。",
+        "why_relevant": "该论文聚焦机器人智能体与代码工具，与遥感基础模型、SAM、GeoSAM、多模态遥感模型等研究方向基本无关；仅因摘要中“SAM”关键词命中（可能为误匹配）及 arXiv 分类 cs.AI 重合而被基础匹配系统关联，实际研究内容不涉及遥感或视觉基础模型。"
+      },
+      "first_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "last_seen_at": "2026-10-01T01:01:37.915263+00:00",
+      "retained_from_previous_run": false
     },
     {
       "id": "2608.25733v1",
@@ -4830,11 +5666,11 @@
     }
   ],
   "stats": {
-    "paper_count": 57,
-    "new_paper_count": 0,
+    "paper_count": 67,
+    "new_paper_count": 10,
     "days": 1,
     "collection_mode": "incremental",
-    "collection_cutoff_iso": "2026-09-29T01:25:11.915748+00:00",
+    "collection_cutoff_iso": "2026-09-30T00:59:04.666902+00:00",
     "max_per_topic": 25,
     "llm_enabled": true,
     "llm_concurrency": 2,
@@ -4846,7 +5682,7 @@
     "dropped_low_relevance_count": 0,
     "max_stored_papers": 800,
     "max_data_bytes": 8388608,
-    "data_bytes": 344993,
+    "data_bytes": 413537,
     "storage_trimmed_count": 0,
     "storage_trimmed_by_level": {
       "high": 0,
