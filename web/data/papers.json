@@ -1,6 +1,6 @@
 {
-  "generated_at": "Tue, 17 Nov 2026 04:17:21 +0000",
-  "generated_at_iso": "2026-11-17T04:17:21.739783+00:00",
+  "generated_at": "Wed, 18 Nov 2026 03:17:06 +0000",
+  "generated_at_iso": "2026-11-18T03:17:06.711752+00:00",
   "config_source": "file",
   "topics": [
     {
@@ -345,6 +345,88 @@
       "first_seen_at": "2026-08-12T00:45:57.921378+00:00",
       "last_seen_at": "2026-08-12T00:45:57.921378+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.22273v1",
+      "source": "arXiv",
+      "title": "SARVIA: Fast-Adapting the Strong SAR Foundation Models That Are Already in Your MLLMs",
+      "authors": [
+        "Yuxuan Li",
+        "Zichen Tian",
+        "Qianru Sun"
+      ],
+      "summary": "Synthetic aperture radar (SAR) foundation models provide transferable representations for diverse perception tasks in all-weather Earth observation. However, their development often relies on costly large-scale SAR pretraining, raising the question of whether such extensive domain-specific pretraining is necessary. We find that modern multimodal large language models (MLLMs) already provide visual encoders that can outperform dedicated SAR foundation models as downstream initializations. This motivates a new paradigm: reuse general visual capabilities and devote domain training to brief specialization. We therefore introduce SARVIA, an adaptive post-pretraining method that specializes modern MLLMs using self-supervised visual questions with computable answers. These questions are constructed from unlabeled observations through general image tasks that capture spatial relations and SAR-specific tasks that exploit native measurements and SAR--optical correspondence. A shared answer-prediction objective jointly trains low-rank adapters across visual and language components, with loss-driven task sampling. We then export the adapted visual encoder as a standalone backbone. With 600 adaptation steps and 2 GPU-hours, SARVIA outperforms the compared foundation models on all six SAR detection and segmentation benchmarks. Compared with dedicated SAR pretraining, SARVIA reduces domain-training costs by orders of magnitude while improving visual transfer across architectures and scales. This new paradigm shifts the emphasis from repeated, costly pretraining to a reusable specialization process that can benefit from advances in open MLLMs. Dataset and code: https://github.com/zcablii/SARVIA.",
+      "published": "2026-11-17T06:19:17Z",
+      "updated": "2026-11-17T06:19:17Z",
+      "paper_url": "http://arxiv.org/abs/2611.22273v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22273v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.596,
+          "level": "medium",
+          "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "foundation model",
+            "SAM"
+          ],
+          "llm_reason": "论文直接涉及遥感基础模型（SAR foundation model）的构建与复用，并讨论视觉基础模型/MLLM 视觉编码器作为遥感下游骨干的迁移，与“遥感基础模型、视觉基础模型、自监督学习、多模态遥感模型”方向高度相关；但未涉及 SAM/GeoSAM 分割基础模型本身。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.28,
+          "level": "low",
+          "reason": "关键词命中：earth observation；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "earth observation"
+          ]
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.177,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.596,
+        "level": "medium",
+        "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "foundation model",
+          "SAM"
+        ],
+        "llm_reason": "论文直接涉及遥感基础模型（SAR foundation model）的构建与复用，并讨论视觉基础模型/MLLM 视觉编码器作为遥感下游骨干的迁移，与“遥感基础模型、视觉基础模型、自监督学习、多模态遥感模型”方向高度相关；但未涉及 SAM/GeoSAM 分割基础模型本身。"
+      },
+      "chinese_summary": {
+        "problem": "SAR 基础模型通常依赖昂贵的大规模 SAR 预训练，论文质疑这种领域专用预训练是否必要，并探索能否直接复用现有多模态大语言模型（MLLM）的视觉编码器作为 SAR 下游任务的初始化。",
+        "method": "提出 SARVIA 自适应后预训练方法：用无标注观测构造带可计算答案的自监督视觉问题（通用空间关系任务与利用原生测量、SAR-光学对应关系的 SAR 专用任务），以共享答案预测目标联合训练视觉与语言部分的低秩适配器，并采用损失驱动任务采样；随后导出适配后的视觉编码器作为独立骨干。",
+        "innovation": "1）发现现代 MLLM 的视觉编码器作为下游初始化可优于专用 SAR 基础模型，提出“复用通用视觉能力+简短领域专门化”的新范式；2）用可计算答案的自监督视觉问答统一通用图像任务与 SAR 专用任务，并通过共享答案预测目标联合适配视觉与语言组件；3）以极低适配成本（600 步、2 GPU 小时）获得可跨架构与规模迁移的独立 SAR 骨干。",
+        "evidence": "摘要称在全部六个 SAR 检测与分割基准上优于所比较的基础模型；相比专用 SAR 预训练，领域训练成本降低数个数量级，并改善跨架构与规模的视觉迁移；具体数值与基准名称需阅读全文确认。",
+        "limitations": "摘要未给出具体基准、对比模型清单与量化指标，也未说明适配所用 MLLM 的规模与类型、SAR-光学配对数据来源及低秩适配器容量对性能的影响；跨架构与规模迁移的验证范围需阅读全文确认。",
+        "why_relevant": "论文直接涉及遥感基础模型（SAR foundation model）的构建与复用，并讨论视觉基础模型/MLLM 视觉编码器作为遥感下游骨干的迁移，与“遥感基础模型、视觉基础模型、自监督学习、多模态遥感模型”方向高度相关；但未涉及 SAM/GeoSAM 分割基础模型本身。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
     },
     {
       "id": "2608.03826v1",
@@ -2060,6 +2142,87 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2611.22508v1",
+      "source": "arXiv",
+      "title": "Reliability-Driven Feature Correction for Hyperspectral and LiDAR Classification",
+      "authors": [
+        "Lianming Zhang",
+        "Xiaolu Wang",
+        "Qiya Song",
+        "Jinyang Liu",
+        "Renwei Dian",
+        "Xudong Kang"
+      ],
+      "summary": "Hyperspectral image (HSI) and LiDAR data provide complementary spectral and elevation information for land-cover classification. However, the spatially varying class-discriminative reliability of modality features is rarely modeled explicitly, allowing weak or ambiguous features to adversely affect cross-modal interaction and fusion. To address this issue, we propose ReDF, a reliability-driven framework that quantifies the reliability of each modality's features at each spatial location through the strength of class-related evidence they provide, and uses it to guide feature correction and fusion. Specifically, a Reliability-Guided Feature Correction module introduces a class prototype bank for each modality and converts feature-prototype similarities into class evidence for reliability estimation. The estimated reliabilities are used to construct a reliability-weighted shared representation and to guide bidirectional cross-modal feature correction based on neighborhood agreement, refining modality features with weak class evidence through information from the other modality. Building on these outputs, a Reliability-Guided Feature Reweighting module conditions a low-rank modulation on the estimated reliabilities and the cross-modal disagreement, and applies it to the corrected modality-specific descriptors to adaptively rescale each modality's contribution to the fused representation used for final classification. Experiments on three public HSI-LiDAR datasets show higher mean overall accuracy and Kappa than the compared methods.",
+      "published": "2026-11-17T10:03:36Z",
+      "updated": "2026-11-17T10:03:36Z",
+      "paper_url": "http://arxiv.org/abs/2611.22508v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22508v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "remote_sensing_land_use",
+      "matches": [
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.43,
+          "level": "medium",
+          "reason": "关键词命中：hyperspectral image；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "hyperspectral image"
+          ],
+          "llm_reason": "该论文面向高光谱与LiDAR遥感土地覆盖分类，属于你关注的多光谱/高光谱遥感分类与深度学习方法；但其核心是多模态特征可靠性建模与融合，并非语义分割或场景分类，与你的方向部分重合。"
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "remote_sensing_land_use",
+        "topic_name": "遥感土地利用分类",
+        "score": 0.43,
+        "level": "medium",
+        "reason": "关键词命中：hyperspectral image；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "hyperspectral image"
+        ],
+        "llm_reason": "该论文面向高光谱与LiDAR遥感土地覆盖分类，属于你关注的多光谱/高光谱遥感分类与深度学习方法；但其核心是多模态特征可靠性建模与融合，并非语义分割或场景分类，与你的方向部分重合。"
+      },
+      "chinese_summary": {
+        "problem": "高光谱影像与LiDAR数据虽能提供互补的光谱和高程信息用于土地覆盖分类，但各模态特征在不同空间位置上的类别判别可靠性存在差异，现有方法很少显式建模这种可靠性，导致弱特征或模糊特征干扰跨模态交互与融合。",
+        "method": "提出ReDF可靠性驱动框架：用类别原型库将特征-原型相似度转化为类别证据以估计每个空间位置各模态特征的可靠性；据此构建可靠性加权共享表示，并基于邻域一致性进行双向跨模态特征纠正；再用可靠性引导的特征重加权模块，以低秩调制对纠正后的模态描述符自适应缩放，得到最终融合表示用于分类。",
+        "innovation": "一是显式量化每个模态在每个空间位置的类别判别可靠性，而非对整个模态做全局加权；二是利用可靠性引导的双向跨模态特征纠正，借助另一模态信息修正类别证据弱的特征；三是将可靠性与跨模态不一致性共同用于低秩调制，自适应调节各模态对融合表示的贡献。",
+        "evidence": "在三个公开HSI-LiDAR数据集上实验，平均总体精度和Kappa高于对比方法；摘要未给出具体数值、数据集名称和对比方法列表。",
+        "limitations": "摘要未说明可靠性估计对原型库初始化与类别数量的敏感性、计算开销、是否适用于其他模态组合（如多光谱+SAR），也未给出具体精度提升幅度和统计显著性，需阅读全文确认。",
+        "why_relevant": "该论文面向高光谱与LiDAR遥感土地覆盖分类，属于你关注的多光谱/高光谱遥感分类与深度学习方法；但其核心是多模态特征可靠性建模与融合，并非语义分割或场景分类，与你的方向部分重合。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2608.27175v1",
       "source": "arXiv",
       "title": "Temporal Sensitivity Analysis of Tessera Embeddings",
@@ -2141,6 +2304,163 @@
       "first_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "last_seen_at": "2026-08-28T05:55:04.065300+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.22351v1",
+      "source": "arXiv",
+      "title": "Scaling Laws for Vision-Language Fusion",
+      "authors": [
+        "Seng Pei Liew",
+        "Teppei Suzuki",
+        "Seiya Tokui"
+      ],
+      "summary": "Vision-language models (VLMs) have emerged as central foundation models combining multimodal perception with text comprehension. While VLMs are traditionally built via late fusion by continued pre-training an off-the-shelf language model on multimodal (image-text) data, mixing modalities from the start of pre-training (early fusion) has recently gained traction. However, the fundamental trade-offs between these paradigms remain poorly understood, resulting in expensive and heuristic-driven training recipes. In this paper, we systematically analyze the learning dynamics of these multimodal pre-training processes, showing that validation losses during vision-language fusion can be modeled by separating the base learning trajectory, where different data types contribute at distinct rates, from a distribution shift driven by the competition between modalities. We derive a scaling law that unifiedly describes these dynamics, enabling accurate loss predictions across mixture ratios, training steps, and model sizes. Crucially, our law characterizes the trade-off between early and late fusion: under a fixed data budget, early fusion preserves text performance while late fusion favors vision performance, yielding a trade-off that increasingly tilts toward early fusion as model size scales. Extensive experiments confirm that our scaling law reliably captures multimodal learning dynamics and governs fusion decisions.",
+      "published": "2026-11-17T08:01:10Z",
+      "updated": "2026-11-17T08:01:10Z",
+      "paper_url": "http://arxiv.org/abs/2611.22351v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22351v1",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.413,
+          "level": "low",
+          "reason": "关键词命中：foundation model；arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": [
+            "foundation model"
+          ],
+          "llm_reason": "论文属于视觉语言基础模型的缩放定律与多模态预训练融合策略研究，与遥感基础模型关注的多模态遥感模型、视觉基础模型预训练范式直接相关，其早期/晚期融合权衡结论可为遥感多模态大模型的训练配方设计提供参考；但论文本身不涉及遥感数据或SAM/GeoSAM类分割模型。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.229,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.198,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.198,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.413,
+        "level": "low",
+        "reason": "关键词命中：foundation model；arXiv 分类重合：cs.CV、cs.LG",
+        "keyword_hits": [
+          "foundation model"
+        ],
+        "llm_reason": "论文属于视觉语言基础模型的缩放定律与多模态预训练融合策略研究，与遥感基础模型关注的多模态遥感模型、视觉基础模型预训练范式直接相关，其早期/晚期融合权衡结论可为遥感多模态大模型的训练配方设计提供参考；但论文本身不涉及遥感数据或SAM/GeoSAM类分割模型。"
+      },
+      "chinese_summary": {
+        "problem": "视觉语言模型（VLM）的早期融合与晚期融合两种多模态预训练范式之间的根本权衡尚不清楚，导致训练配方昂贵且依赖启发式经验。",
+        "method": "系统分析多模态预训练的学习动态，将验证损失建模为基础学习轨迹（不同数据类型以不同速率贡献）与模态竞争驱动的分布偏移的分离，并推导出一个统一描述这些动态的缩放定律，可跨混合比例、训练步数和模型规模预测损失。",
+        "innovation": "提出一个统一缩放定律来刻画视觉语言融合的学习动态，能够跨数据混合比例、训练步数和模型规模准确预测损失；从理论上刻画早期融合与晚期融合的权衡关系（固定数据预算下早期融合保持文本性能、晚期融合偏向视觉性能）；揭示该权衡随模型规模增大而愈发倾向早期融合。",
+        "evidence": "摘要称大量实验确认该缩放定律能可靠捕捉多模态学习动态并指导融合决策，但未给出具体数据集、模型规模范围、损失预测误差数值或基线对比结果。",
+        "limitations": "摘要未说明实验所用的具体模型架构、数据规模与模态类型，也未说明缩放定律在更大规模或真实遥感多模态数据上的外推有效性；需阅读全文确认理论假设与实验覆盖范围。",
+        "why_relevant": "论文属于视觉语言基础模型的缩放定律与多模态预训练融合策略研究，与遥感基础模型关注的多模态遥感模型、视觉基础模型预训练范式直接相关，其早期/晚期融合权衡结论可为遥感多模态大模型的训练配方设计提供参考；但论文本身不涉及遥感数据或SAM/GeoSAM类分割模型。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
+    },
+    {
+      "id": "2611.22496v1",
+      "source": "arXiv",
+      "title": "DARWIN: a Geospatial Foundation Model for Marine Intelligence",
+      "authors": [
+        "Coen van den Elsen",
+        "Laurens Geffert"
+      ],
+      "summary": "We present DARWIN, a geospatial foundation model for marine intelligence. Recent Earth-observation foundation models have concentrated on terrestrial domains. The marine realm poses distinct challenges: missingness, multi-modal physical and biogeochemical variables, sparse labels, and dynamics that are transient, multi-scale, and non stationary over time. DARWIN adapts a masked-autoencoder backbone to these properties through missingness-aware encoding, expanded spatial and temporal masking, and Fourier-style positional embeddings, and is pretrained on 26 years of global Copernicus reanalysis together with GEBCO bathymetry. On predicting chlorophyll-a, the pretrained backbone attains the lowest monthly relative error in every month of 2022, outperforming both no-encoder baselines and an identically architected random-init encoder. At 10% of the supervised training data, DARWIN already surpasses the random-init model trained on 100% of the data. Embedding analysis and qualitative reconstructions show that DARWIN captures coherent oceanographic structure rather than memorising input statistics, providing a scalable backbone for downstream marine applications such as anomaly detection, species distribution modelling, and environmental monitoring.",
+      "published": "2026-11-17T09:51:26Z",
+      "updated": "2026-11-17T09:51:26Z",
+      "paper_url": "http://arxiv.org/abs/2611.22496v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22496v1",
+      "categories": [
+        "cs.AI",
+        "physics.ao-ph"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.38,
+          "level": "low",
+          "reason": "关键词命中：foundation model；arXiv 分类重合：cs.AI",
+          "keyword_hits": [
+            "foundation model"
+          ],
+          "llm_reason": "该论文属于遥感/地球观测基础模型，采用掩码自编码器自监督预训练和视觉基础模型思路，与您关注的遥感基础模型、自监督学习、地球观测基础模型方向直接相关；但其聚焦海洋再分析数据而非光学遥感影像，未涉及 SAM/GeoSAM 或多模态遥感视觉模型，因此匹配度有限。"
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.125,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.062,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.031,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.38,
+        "level": "low",
+        "reason": "关键词命中：foundation model；arXiv 分类重合：cs.AI",
+        "keyword_hits": [
+          "foundation model"
+        ],
+        "llm_reason": "该论文属于遥感/地球观测基础模型，采用掩码自编码器自监督预训练和视觉基础模型思路，与您关注的遥感基础模型、自监督学习、地球观测基础模型方向直接相关；但其聚焦海洋再分析数据而非光学遥感影像，未涉及 SAM/GeoSAM 或多模态遥感视觉模型，因此匹配度有限。"
+      },
+      "chinese_summary": {
+        "problem": "现有地球观测基础模型主要集中于陆地领域，海洋领域因数据缺失、多模态物理与生物地球化学变量、标签稀疏以及瞬态、多尺度、非平稳的海洋动力学而缺乏专门的地理空间基础模型。",
+        "method": "DARWIN 将掩码自编码器骨干适配海洋数据特性，采用缺失感知编码、扩展的时空掩码和傅里叶式位置嵌入，并在 26 年全球 Copernicus 再分析数据与 GEBCO 水深数据上预训练。",
+        "innovation": "一是将掩码自编码器基础模型从陆地拓展到海洋领域，针对海洋数据的缺失性、多模态性和非平稳动力学设计缺失感知编码与扩展时空掩码；二是引入傅里叶式位置嵌入以适配海洋时空结构；三是在叶绿素-a 预测上验证预训练骨干在 2022 年每个月均取得最低月度相对误差，且仅用 10% 监督数据即超过用 100% 数据训练的随机初始化模型。",
+        "evidence": "摘要报告：在 2022 年每个月的叶绿素-a 预测中，预训练骨干的月度相对误差最低，优于无编码器基线和同架构随机初始化编码器；使用 10% 监督训练数据时已超过用 100% 数据训练的随机初始化模型；嵌入分析与定性重建表明模型捕获了连贯的海洋学结构而非记忆输入统计。",
+        "limitations": "摘要未给出具体误差数值、对比模型细节、下游任务（如异常检测、物种分布建模、环境监测）的定量结果，也未说明计算成本与数据偏差；需阅读全文确认方法细节与泛化性。",
+        "why_relevant": "该论文属于遥感/地球观测基础模型，采用掩码自编码器自监督预训练和视觉基础模型思路，与您关注的遥感基础模型、自监督学习、地球观测基础模型方向直接相关；但其聚焦海洋再分析数据而非光学遥感影像，未涉及 SAM/GeoSAM 或多模态遥感视觉模型，因此匹配度有限。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
     },
     {
       "id": "2610.07698v1",
@@ -3385,6 +3705,85 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2611.22611v1",
+      "source": "arXiv",
+      "title": "DAQ: Decision-Aligned Post-Training Quantization for Spiking Transformers",
+      "authors": [
+        "Jialin Chen",
+        "Xiaochen Zhao",
+        "Aili Wang"
+      ],
+      "summary": "Spiking transformers combine attention-based representation learning with sparse spike communication, yet their weights and membrane variables still incur substantial storage and computation overhead. Post-training quantization (PTQ) offers a practical way to reduce these overheads, but preserving neuronal firing under weight and membrane quantization remains challenging. In this paper, we propose Decision-Aligned Post-Training Quantization (DAQ), a method that calibrates the quantizers to align neuronal firing decisions with those of a floating-point reference. We analyze how errors from these quantizers affect firing at decision boundaries and how they propagate over time steps in recurrent neurons. Based on this analysis, we formulate an objective that encourages quantized membrane variables to remain within the reference firing regions along the quantized model's own state trajectory. Experiments across multiple spiking transformer architectures on image classification, semantic segmentation, and event-based tracking demonstrate the effectiveness of DAQ with 4-bit weights and membrane variables. On FE108, DAQ achieves 58.8\\% AUC and 90.9\\% PR with SDTrack, while reducing energy by 66.2\\%.",
+      "published": "2026-11-17T11:25:44Z",
+      "updated": "2026-11-17T11:25:44Z",
+      "paper_url": "http://arxiv.org/abs/2611.22611v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22611v1",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "seed_topic": "remote_sensing_land_use",
+      "matches": [
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.28,
+          "level": "low",
+          "reason": "关键词命中：semantic segmentation；arXiv 分类重合：cs.LG",
+          "keyword_hits": [
+            "semantic segmentation"
+          ],
+          "llm_reason": "研究方向中的语义分割与深度学习方法与该论文的图像分类、语义分割实验有方法层面的交集，量化压缩对遥感语义分割模型部署可能具有参考价值；但论文面向脉冲Transformer与事件跟踪，未涉及遥感影像、土地利用分类、多光谱或SAR数据，匹配度有限。"
+        },
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.26,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.AI、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.177,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "remote_sensing_land_use",
+        "topic_name": "遥感土地利用分类",
+        "score": 0.28,
+        "level": "low",
+        "reason": "关键词命中：semantic segmentation；arXiv 分类重合：cs.LG",
+        "keyword_hits": [
+          "semantic segmentation"
+        ],
+        "llm_reason": "研究方向中的语义分割与深度学习方法与该论文的图像分类、语义分割实验有方法层面的交集，量化压缩对遥感语义分割模型部署可能具有参考价值；但论文面向脉冲Transformer与事件跟踪，未涉及遥感影像、土地利用分类、多光谱或SAR数据，匹配度有限。"
+      },
+      "chinese_summary": {
+        "problem": "脉冲Transformer在权重和膜电位变量上仍存在较大的存储与计算开销，而训练后量化在降低这些开销时难以保持神经元的发放决策不变。",
+        "method": "提出决策对齐训练后量化（DAQ），通过校准量化器使量化模型的神经元发放决策与浮点参考模型对齐；分析量化误差对决策边界发放的影响及其在循环神经元时间步上的传播，并据此构造目标函数，使量化膜电位沿量化模型自身状态轨迹保持在参考发放区域内。",
+        "innovation": "将量化器校准目标从数值误差最小化转为神经元发放决策对齐，并显式建模量化误差在决策边界处的影响及在时间步间的传播；以量化模型自身状态轨迹为约束构造训练后量化目标，在4比特权重与膜电位下保持脉冲发放行为。",
+        "evidence": "摘要称在多种脉冲Transformer架构上、针对图像分类、语义分割和事件跟踪任务进行了实验；在FE108上，DAQ配合SDTrack取得58.8% AUC和90.9% PR，并降低66.2%能耗。摘要未给出与基线方法的完整对比数值、消融细节或理论证明。",
+        "limitations": "摘要未说明所用遥感数据集或遥感场景实验，语义分割实验的具体数据集与指标未给出；决策对齐目标的理论保证、量化校准所需数据量与计算成本、4比特以下或不同脉冲架构的泛化性需阅读全文确认。",
+        "why_relevant": "研究方向中的语义分割与深度学习方法与该论文的图像分类、语义分割实验有方法层面的交集，量化压缩对遥感语义分割模型部署可能具有参考价值；但论文面向脉冲Transformer与事件跟踪，未涉及遥感影像、土地利用分类、多光谱或SAR数据，匹配度有限。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2610.11205v1",
       "source": "arXiv",
       "title": "Dissecting Representation Structure in Vision Transformers: A Rigorous Architectural Study",
@@ -3545,6 +3944,89 @@
       "first_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "last_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.22458v1",
+      "source": "arXiv",
+      "title": "Sample-Aligned Decoders for Latent Generative Models",
+      "authors": [
+        "Yu Lei",
+        "Yi Li",
+        "Hongcheng Gao",
+        "Yipeng Wei",
+        "Liang Li",
+        "Li Su",
+        "Qingming Huang"
+      ],
+      "summary": "Latent generative models synthesize images by decoding generated latents, yet their decoder is trained only to reconstruct encoder latents and never sees the latents it decodes at test time, so the residual errors of the generator are rendered directly into the final image. Existing remedies retrain the generator, add cost at every sampling step, or make the decoder robust to perturbed real latents, assuming that generator errors resemble such perturbations. We find that they do not. Generated latents lie on the encoder latent manifold as closely as real ones, yet follow a different distribution. The decoder should therefore be adapted to the distribution of generated latents, which raises two challenges: (1) unpaired supervision, since a generated latent has no ground-truth image, and (2) latent-space drift, since a decoder freed from paired targets forgets the latent space it must decode. We propose Sample-Aligned Decoders (SAD), a post-training framework that fine-tunes only the decoder of a frozen generator at no inference cost. Generated-Sample Distribution Alignment matches decoded generated latents to unpaired real images in a frozen foundation-model feature space, and Encoder Anchor Preservation keeps the decoder close to the original one on encoder latents. Our analysis shows that the alignment is effective only on generated latents, where it corrects each sample in proportion to how much more often the generator produces such latents than the encoder; on encoder latents it can only work against the anchor. SAD improves four state-of-the-art ImageNet generators across three tokenizers, e.g., FID-50K from 1.15 to 0.98 for REPA-E, complements discriminator guidance, and extends to text-to-image generation. Our code and models are available at https://torpedo2003.github.io/SAD/.",
+      "published": "2026-11-17T09:21:58Z",
+      "updated": "2026-11-17T09:21:58Z",
+      "paper_url": "http://arxiv.org/abs/2611.22458v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22458v1",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.264,
+          "level": "low",
+          "reason": "关键词命中：SAM；arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": [
+            "SAM"
+          ],
+          "llm_reason": "该论文属于生成式视觉基础模型（潜空间生成模型、扩散模型）的解码器后训练方法，与视觉基础模型、自监督/生成式表征学习相关；但其研究对象是自然图像生成（ImageNet、文本到图像），不涉及遥感、SAM/GeoSAM或多模态遥感，与“遥感基础模型”方向仅为方法层面的弱相关。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.198,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.198,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.198,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV、cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.264,
+        "level": "low",
+        "reason": "关键词命中：SAM；arXiv 分类重合：cs.CV、cs.LG",
+        "keyword_hits": [
+          "SAM"
+        ],
+        "llm_reason": "该论文属于生成式视觉基础模型（潜空间生成模型、扩散模型）的解码器后训练方法，与视觉基础模型、自监督/生成式表征学习相关；但其研究对象是自然图像生成（ImageNet、文本到图像），不涉及遥感、SAM/GeoSAM或多模态遥感，与“遥感基础模型”方向仅为方法层面的弱相关。"
+      },
+      "chinese_summary": {
+        "problem": "潜空间生成模型（如扩散模型）的解码器仅被训练用于重建编码器潜变量，在测试时从未见过生成器产生的潜变量，导致生成器的残差误差被直接渲染进最终图像。",
+        "method": "提出样本对齐解码器（SAD）后训练框架：冻结生成器，仅微调解码器；用生成样本分布对齐（在冻结基础模型特征空间中将解码后的生成潜变量匹配到无配对真实图像）和编码器锚点保持（约束解码器在编码器潜变量上接近原解码器）两个机制。",
+        "innovation": "1）发现生成潜变量虽位于编码器潜变量流形上但分布不同，且生成器误差并不类似对真实潜变量的扰动，从而否定了现有“对扰动鲁棒”的假设；2）仅微调解码器、不增加推理成本，避免重训生成器或每步采样加开销；3）用无配对监督加锚点保持同时解决无配对监督与潜空间漂移两个挑战。",
+        "evidence": "摘要给出：在ImageNet上跨三个tokenizer改进四个先进生成器，例如REPA-E的FID-50K从1.15降至0.98；与discriminator guidance互补；可扩展到文本到图像生成；并给出理论分析说明对齐仅在生成潜变量上有效、在编码器潜变量上只会与锚点冲突。",
+        "limitations": "摘要未说明SAD在遥感或自然图像以外域上的泛化性；未给出计算开销、微调数据规模与训练细节；理论分析的具体假设需阅读全文确认；FID提升幅度较小（1.15→0.98），实际视觉收益需全文验证。",
+        "why_relevant": "该论文属于生成式视觉基础模型（潜空间生成模型、扩散模型）的解码器后训练方法，与视觉基础模型、自监督/生成式表征学习相关；但其研究对象是自然图像生成（ImageNet、文本到图像），不涉及遥感、SAM/GeoSAM或多模态遥感，与“遥感基础模型”方向仅为方法层面的弱相关。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
     },
     {
       "id": "2610.09392v1",
@@ -3790,6 +4272,89 @@
       "first_seen_at": "2026-10-09T01:41:30.156501+00:00",
       "last_seen_at": "2026-10-09T01:41:30.156501+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.22650v1",
+      "source": "arXiv",
+      "title": "Must You See Fakes to Catch Fakes? Language Says What to Look For, Real Images What to Ignore",
+      "authors": [
+        "Tianchi Xu",
+        "Yuxuan Zhou",
+        "Yuheng Zhang",
+        "Yanan Guan",
+        "Tao Dai",
+        "Shu-Tao Xia"
+      ],
+      "summary": "Must a detector see generated images in order to catch them? Detection of AI-generated images has long faced two problems. The cues a detector learns from the few generators in its training set carry traces specific to those generators and transfer poorly to new ones, which limits generalization. The real and generated training images also differ in format and content, so the detector takes these differences as evidence of authenticity, and its decisions change with factors that have nothing to do with authenticity, which harms robustness as well as generalization. Both problems stem from training on generated images. A detector never trained on them can largely avoid both at the source. Vision foundation models have already learned the concept of \"AI-generated\" during pretraining, and text can point to it directly. Building on this, we propose SaySee, a training-free detector: Say builds a generation direction from sets of paired descriptions that differ only in authenticity and scores an image by the projection of its embedding onto it, and See uses real images to correct the score offsets caused by format, image type and content. On 24 evaluation sets that span standard benchmarks, in-the-wild data and the latest generators, SaySee reaches a mean AUC of 98.2% with MoE-ViE, 4.2 points above the best existing detector. When format is decoupled from authenticity, it remains the best of all methods. Code will be released.",
+      "published": "2026-11-17T12:07:26Z",
+      "updated": "2026-11-17T12:07:26Z",
+      "paper_url": "http://arxiv.org/abs/2611.22650v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22650v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.246,
+          "level": "low",
+          "reason": "关键词命中：foundation model、vision foundation model；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "foundation model",
+            "vision foundation model"
+          ],
+          "llm_reason": "论文以视觉基础模型为核心，利用其预训练中习得的“AI生成”概念并结合文本进行免训练检测，属于视觉基础模型在图像真实性判别上的应用；但与遥感基础模型、SAM/GeoSAM、多模态遥感或遥感智能解译无直接关联，匹配度有限。"
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.177,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.177,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.246,
+        "level": "low",
+        "reason": "关键词命中：foundation model、vision foundation model；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "foundation model",
+          "vision foundation model"
+        ],
+        "llm_reason": "论文以视觉基础模型为核心，利用其预训练中习得的“AI生成”概念并结合文本进行免训练检测，属于视觉基础模型在图像真实性判别上的应用；但与遥感基础模型、SAM/GeoSAM、多模态遥感或遥感智能解译无直接关联，匹配度有限。"
+      },
+      "chinese_summary": {
+        "problem": "论文要解决AI生成图像检测器的泛化性与鲁棒性问题：检测器在训练集少量生成器上学到的线索难以迁移到新生成器，且真实与生成图像在格式和内容上的差异会被误当作真实性证据。",
+        "method": "提出免训练的SaySee检测器：Say利用仅在真实性上不同的成对描述集合构建“生成方向”，用图像嵌入在该方向上的投影打分；See利用真实图像校正由格式、图像类型和内容造成的分数偏移。",
+        "innovation": "1) 提出完全不使用生成图像训练的免训练检测思路，从源头规避生成器特定线索与虚假相关；2) 利用视觉基础模型预训练中已习得的“AI生成”概念，并用文本直接指向该概念，构建生成方向进行投影打分；3) 用真实图像校正格式、图像类型与内容导致的分数偏移，提升鲁棒性与泛化性。",
+        "evidence": "在覆盖标准基准、in-the-wild数据和最新生成器的24个评测集上，使用MoE-ViE达到平均AUC 98.2%，比最佳现有检测器高4.2个百分点；在将格式与真实性解耦后仍为所有方法中最佳。代码将发布。",
+        "limitations": "摘要未说明生成方向构建所依赖的成对描述来源与规模、真实图像校正的具体实现细节，也未给出各评测集的分项结果与计算开销；免训练方法对视觉基础模型和文本描述质量的依赖程度需阅读全文确认。",
+        "why_relevant": "论文以视觉基础模型为核心，利用其预训练中习得的“AI生成”概念并结合文本进行免训练检测，属于视觉基础模型在图像真实性判别上的应用；但与遥感基础模型、SAM/GeoSAM、多模态遥感或遥感智能解译无直接关联，匹配度有限。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
     },
     {
       "id": "2610.11692v1",
@@ -4192,6 +4757,162 @@
       "first_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "last_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.22699v1",
+      "source": "arXiv",
+      "title": "TANGO: Real-World Unregistered RGB-Guided Hyperspectral Super-Resolution with Two-Camera Acquisitions",
+      "authors": [
+        "Matteo Kolyszko",
+        "Marco Buzzelli",
+        "Simone Bianco",
+        "Raimondo Schettini"
+      ],
+      "summary": "Unregistered hyperspectral image super-resolution aims to recover a high-resolution HSI from a low-resolution hyperspectral observation and an unregistered high-resolution RGB reference. Although recent methods have begun to address the geometric misalignment between the two modalities, their evaluation is still constrained by the lack of a large-scale public benchmark based on real two-camera RGB--HSI acquisitions with a high-resolution HSI reference. To address this gap, we introduce DUET, the first large-scale public dataset for unregistered RGB-guided hyperspectral super-resolution, comprising 403 indoor and outdoor scenes captured with two separate RGB and hyperspectral cameras. We further propose TANGO (Two-camera AligNment with Gated Occlusions), which first compensates for the dominant cross-camera displacement through end-to-end global alignment and then refines the remaining inconsistencies with a coarse-to-fine local feature alignment. A learned gating mechanism further attenuates the RGB guidance where the two views cannot be consistently matched. Experimental results show that TANGO achieves state-of-the-art performance on both DUET and REAL across all evaluated scale factors, outperforming the strongest competitor on DUET by up to 2.29 dB in PSNR while requiring 2.5$\\times$ fewer FLOPs. The code and dataset will be available at https://github.com/FagiolottoConSombrero/TANGO-DUET",
+      "published": "2026-11-17T12:46:01Z",
+      "updated": "2026-11-17T12:46:01Z",
+      "paper_url": "http://arxiv.org/abs/2611.22699v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22699v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "remote_sensing_land_use",
+      "matches": [
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.217,
+          "level": "low",
+          "reason": "关键词命中：hyperspectral image；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "hyperspectral image"
+          ],
+          "llm_reason": "论文涉及高光谱图像与RGB引导的超分辨率，属于多光谱/高光谱遥感影像增强与融合范畴，可为遥感土地利用分类前的空间分辨率提升与多模态配准提供预处理思路；但其应用场景为近景双相机采集，并非遥感对地观测，与土地利用分类、语义分割等核心任务仅有间接关联。"
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "remote_sensing_land_use",
+        "topic_name": "遥感土地利用分类",
+        "score": 0.217,
+        "level": "low",
+        "reason": "关键词命中：hyperspectral image；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "hyperspectral image"
+        ],
+        "llm_reason": "论文涉及高光谱图像与RGB引导的超分辨率，属于多光谱/高光谱遥感影像增强与融合范畴，可为遥感土地利用分类前的空间分辨率提升与多模态配准提供预处理思路；但其应用场景为近景双相机采集，并非遥感对地观测，与土地利用分类、语义分割等核心任务仅有间接关联。"
+      },
+      "chinese_summary": {
+        "problem": "论文解决的是未配准RGB引导的高光谱图像超分辨率问题：在低分辨率高光谱观测与未配准的高分辨率RGB参考图像之间恢复高分辨率HSI，且现有方法缺乏基于真实双相机采集的大规模公开基准。",
+        "method": "提出DUET数据集，包含403个室内外场景，由独立的RGB与高光谱相机采集；并提出TANGO方法，先通过端到端全局对齐补偿跨相机主导位移，再用由粗到细的局部特征对齐修正残余不一致，并用学习门控机制在无法一致匹配处衰减RGB引导。",
+        "innovation": "一是构建了首个面向未配准RGB引导高光谱超分辨率的大规模公开双相机数据集DUET，提供高分辨率HSI参考；二是提出全局对齐加由粗到细局部对齐的两阶段跨相机配准策略；三是引入学习门控机制抑制不可靠RGB引导，并在DUET与REAL上以更少FLOPs取得更优性能。",
+        "evidence": "摘要报告TANGO在DUET和REAL上所有评估缩放因子下均达到state-of-the-art，在DUET上PSNR最高超过最强对比方法2.29 dB，且FLOPs少2.5倍；代码与数据集承诺公开。",
+        "limitations": "摘要未给出具体对比方法、消融实验细节、数据集规模划分及门控机制失效条件；DUET为室内外场景采集，是否覆盖遥感对地观测场景需阅读全文确认；未配准假设与双相机采集设置向星载或航空多模态数据的迁移性未知。",
+        "why_relevant": "论文涉及高光谱图像与RGB引导的超分辨率，属于多光谱/高光谱遥感影像增强与融合范畴，可为遥感土地利用分类前的空间分辨率提升与多模态配准提供预处理思路；但其应用场景为近景双相机采集，并非遥感对地观测，与土地利用分类、语义分割等核心任务仅有间接关联。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
+    },
+    {
+      "id": "2611.22299v1",
+      "source": "arXiv",
+      "title": "Harnesses That Improve Themselves: A Unifying Framework for Self-Improving Agent Harnesses",
+      "authors": [
+        "Deep Shah",
+        "Nehal Kathrotia"
+      ],
+      "summary": "Whether a foundation model succeeds as an autonomous agent depends as much on its runtime software as on its weights. This runtime, the agent harness, manages context and memory, steers multi-turn control, executes tool actions in sandboxes, and verifies work before stopping. Because models differ in how they use tools and how they fail, a static harness tuned for one model or task often stalls, wastes tokens, or regresses on another. This bottleneck has driven a shift from prompt tuning to self-improving agent harnesses: systems that inspect their own execution traces, separate runtime bugs from model limits, and rewrite their own code. We present a unifying architectural and design framework for self-improving agent harnesses. The framework pairs four editable runtime components (context and state, agent control, action interfaces, and verification and recovery) with a four-stage loop that diagnoses failures, proposes code patches, validates candidates, and deploys updates. Using this framework, we show how optimizers trace errors across long trajectories and discover reusable runtime mechanisms such as pre-stop verifiers, loop breakers, and persistent memory. We further show why full-harness rewrites overfit or break across modules, and how modular updates with validation gates generalize across models while bounding token cost. To keep self-modification safe, we establish practical defenses against recurring failure modes including prompt bloat, benchmark gaming, and evaluator tampering. Finally, experiments on SWE-bench Lite validate this framework, showing that gated modular evolution outperforms prompt reflection and full-harness rewrites across models and repositories at a fraction of the token cost.",
+      "published": "2026-11-17T06:55:41Z",
+      "updated": "2026-11-17T06:55:41Z",
+      "paper_url": "http://arxiv.org/abs/2611.22299v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22299v1",
+      "categories": [
+        "cs.AI"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.217,
+          "level": "low",
+          "reason": "关键词命中：foundation model；arXiv 分类重合：cs.AI",
+          "keyword_hits": [
+            "foundation model"
+          ],
+          "llm_reason": "论文仅在“foundation model作为自主智能体”的语境下提及基础模型，讨论的是智能体运行时harness的自我改进，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感或遥感自监督学习无直接关系；其“基础模型”含义为通用大模型智能体，而非遥感视觉基础模型。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.031,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.031,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.0,
+          "level": "low",
+          "reason": "文本语义与方向描述存在弱相关，需要人工复核。",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.217,
+        "level": "low",
+        "reason": "关键词命中：foundation model；arXiv 分类重合：cs.AI",
+        "keyword_hits": [
+          "foundation model"
+        ],
+        "llm_reason": "论文仅在“foundation model作为自主智能体”的语境下提及基础模型，讨论的是智能体运行时harness的自我改进，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感或遥感自监督学习无直接关系；其“基础模型”含义为通用大模型智能体，而非遥感视觉基础模型。"
+      },
+      "chinese_summary": {
+        "problem": "论文关注自主智能体的运行时软件（agent harness）问题：静态harness针对某一模型或任务调优后，换到其他模型或任务上容易停滞、浪费token或性能回退，因此需要能自我改进的harness。",
+        "method": "提出统一的架构与设计框架：将harness拆为四个可编辑运行时组件（上下文与状态、智能体控制、动作接口、验证与恢复），并配合四阶段循环（诊断失败、提出代码补丁、验证候选、部署更新），实现模块化自我修改。",
+        "innovation": "一是把自我改进型agent harness形式化为“四组件+四阶段循环”的统一框架；二是揭示全量重写harness易过拟合或跨模块破坏，而带验证门控的模块化更新可跨模型泛化并控制token成本；三是针对prompt膨胀、基准作弊、评估器篡改等自我修改风险提出实际防御措施。",
+        "evidence": "摘要称在SWE-bench Lite上进行了实验，结果显示带门控的模块化演化在跨模型、跨仓库场景下优于prompt reflection与全量harness重写，且token成本更低；但摘要未给出具体数值、对比基线细节或统计显著性。",
+        "limitations": "摘要未提供实验规模、具体指标数值与消融细节；防御措施的有效性缺乏量化证据；框架主要面向代码类智能体任务（SWE-bench Lite），向其他任务或模态的泛化性需阅读全文确认。",
+        "why_relevant": "论文仅在“foundation model作为自主智能体”的语境下提及基础模型，讨论的是智能体运行时harness的自我改进，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感或遥感自监督学习无直接关系；其“基础模型”含义为通用大模型智能体，而非遥感视觉基础模型。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
     },
     {
       "id": "2610.09275v1",
@@ -5486,6 +6207,88 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2611.22244v1",
+      "source": "arXiv",
+      "title": "PhyVGGT: Feed-Forward Articulated Object Reconstruction from Monocular Videos",
+      "authors": [
+        "Qi Shao",
+        "Zhihao Cao",
+        "Shuhao Zhai",
+        "Anh Nguyen",
+        "Hong Liang",
+        "Baoru Huang",
+        "Liang Li"
+      ],
+      "summary": "Reconstructing an articulated object with its 3D movable parts, joint parameters and unseen articulation states from an uncalibrated monocular video is essential for robot manipulation and interactive digital twins. Existing per-scene optimisation methods require minutes to hours and external depth or camera poses, whereas feed-forward 3D foundation models reconstruct dense point maps in one pass without segmenting movable parts or inferring joints. Even on these monocular point maps, regressing or fitting continuous joints directly fails on casual videos, since cross-frame attention blurs moving part boundaries in deep layers, underestimates motion along the viewing ray and leaves continuous axes ill-conditioned under small opening angles. To address these challenges, we propose PhyVGGT, a single-pass framework on a frozen 3D foundation model that anchors moving-part matching and closed-form joint estimation to the undistorted geometry of the stationary base. First, our Part and Motion Decoder fuses intermediate per-frame tokens with global tokens and references part queries to a static-base query to segment 3D parts, align point maps on the static base and predict learned Bingham priors. Second, our Kinematic Inference Layer fits an orthogonal Manhattan frame to static surface normals, selects the joint axis in closed form under a Bingham posterior combining pairwise motion scatter with the learned priors, and solves a linear system for the hinge pivot to drive unseen states. Trained solely on synthetic data, PhyVGGT achieves state-of-the-art monocular performance across five benchmarks, outperforming FAMOS and monocular ArtiPoint, surpassing posed RGB-D ArtiPoint in median error, and running in 6.8 s per 48-frame video against hours of per-scene optimisation in Articulat3D. Project page: https://phyvggt.github.io.",
+      "published": "2026-11-17T05:46:58Z",
+      "updated": "2026-11-17T05:46:58Z",
+      "paper_url": "http://arxiv.org/abs/2611.22244v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.22244v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.167,
+          "level": "low",
+          "reason": "关键词命中：foundation model；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "foundation model"
+          ],
+          "llm_reason": "论文使用冻结的三维基础模型（3D foundation model）做前馈重建，属于视觉基础模型在三维感知上的应用，与研究方向中的基础模型主题有方法层面的关联；但其面向铰接物体重建与机器人操作，并非遥感或地球观测场景，也不涉及 SAM、GeoSAM 或多模态遥感，因此相关性有限。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.167,
+        "level": "low",
+        "reason": "关键词命中：foundation model；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "foundation model"
+        ],
+        "llm_reason": "论文使用冻结的三维基础模型（3D foundation model）做前馈重建，属于视觉基础模型在三维感知上的应用，与研究方向中的基础模型主题有方法层面的关联；但其面向铰接物体重建与机器人操作，并非遥感或地球观测场景，也不涉及 SAM、GeoSAM 或多模态遥感，因此相关性有限。"
+      },
+      "chinese_summary": {
+        "problem": "论文要解决从无标定单目视频中重建铰接物体的三维可动部件、关节参数及未见铰接状态的问题，现有逐场景优化方法耗时且需外部深度或相机位姿，前馈三维基础模型虽能一次重建稠密点图但不分割可动部件也不推断关节。",
+        "method": "提出 PhyVGGT，在冻结的三维基础模型上做单次前馈框架：部件与运动解码器融合逐帧中间 token 与全局 token，并以静态基座查询为参照分割三维部件、对齐点图、预测 Bingham 先验；运动学推断层对静态表面法向拟合正交 Manhattan 框架，在 Bingham 后验下闭式选择关节轴，并解线性系统求铰链枢轴以驱动未见状态。",
+        "innovation": "1) 将可动部件匹配与闭式关节估计锚定到静态基座的未失真几何上，缓解跨帧注意力模糊运动边界与沿视线方向运动被低估的问题；2) 用部件与运动解码器融合中间层与全局 token 并引入静态基座查询参考，实现三维部件分割与点图对齐；3) 结合学习到的 Bingham 先验与成对运动散布，在闭式框架下选择关节轴并线性求解铰链枢轴，改善小开合角下连续轴病态问题。",
+        "evidence": "摘要称仅用合成数据训练，在五个基准上取得单目最优性能，优于 FAMOS 与单目 ArtiPoint，中位误差超过有位姿的 RGB-D ArtiPoint，48 帧视频运行 6.8 秒，而 Articulat3D 逐场景优化需数小时；具体数值与基准细节需阅读全文确认。",
+        "limitations": "摘要未给出五个基准的具体名称与量化指标，也未说明对真实世界视频的泛化、失败案例及对静态基座假设的依赖程度；仅用合成数据训练可能带来域差距，需阅读全文确认。",
+        "why_relevant": "论文使用冻结的三维基础模型（3D foundation model）做前馈重建，属于视觉基础模型在三维感知上的应用，与研究方向中的基础模型主题有方法层面的关联；但其面向铰接物体重建与机器人操作，并非遥感或地球观测场景，也不涉及 SAM、GeoSAM 或多模态遥感，因此相关性有限。"
+      },
+      "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2610.11613v1",
       "source": "arXiv",
       "title": "AgentEvolver: System-Wide Self-Evolution Through Task Execution",
@@ -5978,11 +6781,11 @@
     }
   ],
   "stats": {
-    "paper_count": 71,
-    "new_paper_count": 0,
+    "paper_count": 81,
+    "new_paper_count": 10,
     "days": 1,
     "collection_mode": "incremental",
-    "collection_cutoff_iso": "2026-11-16T01:32:13.392334+00:00",
+    "collection_cutoff_iso": "2026-11-17T04:17:21.739783+00:00",
     "max_per_topic": 25,
     "llm_enabled": true,
     "llm_concurrency": 2,
@@ -5994,7 +6797,7 @@
     "dropped_low_relevance_count": 0,
     "max_stored_papers": 800,
     "max_data_bytes": 8388608,
-    "data_bytes": 459049,
+    "data_bytes": 524147,
     "storage_trimmed_count": 0,
     "storage_trimmed_by_level": {
       "high": 0,
