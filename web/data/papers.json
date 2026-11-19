@@ -1,6 +1,6 @@
 {
-  "generated_at": "Wed, 18 Nov 2026 03:17:06 +0000",
-  "generated_at_iso": "2026-11-18T03:17:06.711752+00:00",
+  "generated_at": "Thu, 19 Nov 2026 02:54:41 +0000",
+  "generated_at_iso": "2026-11-19T02:54:41.868537+00:00",
   "config_source": "file",
   "topics": [
     {
@@ -426,7 +426,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.03826v1",
@@ -2220,7 +2220,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.27175v1",
@@ -2382,7 +2382,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.22496v1",
@@ -2460,7 +2460,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.07698v1",
@@ -3781,7 +3781,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.11205v1",
@@ -4026,6 +4026,178 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
+      "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.23779v1",
+      "source": "arXiv",
+      "title": "TabBioMed: A Large-Scale Benchmark for Biomedical Tabular Learning",
+      "authors": [
+        "Pau Mateo-Bernadó",
+        "Saivenkata Nagavyjayanthi Polapragada",
+        "David Bonet",
+        "Pol Arbiol Rakuljic",
+        "Laia Mogas Pladevall",
+        "Marçal Comajoan Cara",
+        "Jesus Gonzalez-Ferrer",
+        "Jordi Abante",
+        "Daniel Mas Montserrat",
+        "David Haussler",
+        "Alexander G. Ioannidis"
+      ],
+      "summary": "Recent advances in machine learning have accelerated biomedical prediction, but evaluation on structured biomedical data remains fragmented, especially for datasets with high dimensionality, large sample size, missingness, and class imbalance. We introduce TabBioMed, a large-scale benchmark of 94 curated public biomedical tabular datasets spanning electronic health records, drug discovery, genomics, transcriptomics, proteomics, metabolomics, single-cell omics, and systems biology. TabBioMed unifies these datasets through a standardized, dataset-aware preprocessing and evaluation framework, enabling reproducible comparison across classification, regression, and multi-target tasks. We benchmark 23 models across classical baselines, gradient-boosted trees, neural tabular architectures, and tabular foundation models. Foundation models deliver the strongest family-level predictive performance. However, their gains are regime-dependent: tree-based models and tuned multilayer perceptrons remain highly competitive, often dominating under inference-time or training-cost constraints. Overall, TabBioMed shows that biomedical tabular learning is strongly context-dependent, with optimal model choice depending on data regime, task type, and computational budget. We release TabBioMed with curated datasets and splits, preprocessing code, baselines, and results, providing a reproducible benchmark for practical model selection and future methods development in biomedical machine learning, available at https://github.com/AI-sandbox/TabBioMed.",
+      "published": "2026-11-18T03:35:35Z",
+      "updated": "2026-11-18T03:35:35Z",
+      "paper_url": "http://arxiv.org/abs/2611.23779v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23779v1",
+      "categories": [
+        "cs.LG"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.252,
+          "level": "low",
+          "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.LG",
+          "keyword_hits": [
+            "foundation model",
+            "SAM"
+          ],
+          "llm_reason": "匹配度较低：论文主题是生物医学表格学习基准，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感与遥感智能解译无直接关系；仅因摘要出现‘foundation model’关键词且 arXiv 分类为 cs.LG 而产生弱关联，其基础模型评测思路（基准构建、模型族对比、成本-性能权衡）对遥感基础模型评测方法学有间接参考价值。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.252,
+        "level": "low",
+        "reason": "关键词命中：foundation model、SAM；arXiv 分类重合：cs.LG",
+        "keyword_hits": [
+          "foundation model",
+          "SAM"
+        ],
+        "llm_reason": "匹配度较低：论文主题是生物医学表格学习基准，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感与遥感智能解译无直接关系；仅因摘要出现‘foundation model’关键词且 arXiv 分类为 cs.LG 而产生弱关联，其基础模型评测思路（基准构建、模型族对比、成本-性能权衡）对遥感基础模型评测方法学有间接参考价值。"
+      },
+      "chinese_summary": {
+        "problem": "生物医学结构化（表格）数据的机器学习评估高度碎片化，尤其缺乏针对高维、大样本、缺失值和类别不平衡数据集的统一、可复现评测基准。",
+        "method": "构建 TabBioMed 大规模基准，整合 94 个公开生物医学表格数据集（覆盖电子健康记录、药物发现、基因组学、转录组学、蛋白组学、代谢组学、单细胞组学、系统生物学），通过数据集感知的标准化预处理与评估框架统一分类、回归和多目标任务，并基准测试 23 个模型（经典基线、梯度提升树、神经表格架构、表格基础模型）。",
+        "innovation": "一是构建跨多个生物医学子领域、规模达 94 个数据集的统一表格学习基准，并提供标准化预处理、划分、基线与结果以支持可复现比较；二是系统对比经典模型、树模型、神经表格架构与表格基础模型四类方法，揭示基础模型的性能优势依赖数据与任务情形（regime-dependent），在推理时或训练成本约束下树模型与调优 MLP 仍具竞争力。",
+        "evidence": "摘要给出可核验信息：94 个精选公开生物医学表格数据集、23 个模型、覆盖分类/回归/多目标任务；结论为基础模型在家族层面预测性能最强，但增益依赖具体情形，树模型与调优多层感知机在成本约束下常占优；代码与数据发布于 GitHub。摘要未给出具体数值指标或统计检验细节。",
+        "limitations": "摘要未提供各数据集规模、缺失率与不平衡程度的具体统计，也未给出模型间差异的量化结果与显著性检验；‘基础模型’具体指哪些表格基础模型、预处理与调参协议、计算成本度量方式均需阅读全文确认；基准仅限表格数据，不涉及遥感影像或视觉基础模型。",
+        "why_relevant": "匹配度较低：论文主题是生物医学表格学习基准，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感与遥感智能解译无直接关系；仅因摘要出现‘foundation model’关键词且 arXiv 分类为 cs.LG 而产生弱关联，其基础模型评测思路（基准构建、模型族对比、成本-性能权衡）对遥感基础模型评测方法学有间接参考价值。"
+      },
+      "first_seen_at": "2026-11-19T02:54:41.868537+00:00",
+      "last_seen_at": "2026-11-19T02:54:41.868537+00:00",
+      "retained_from_previous_run": false
+    },
+    {
+      "id": "2611.23770v1",
+      "source": "arXiv",
+      "title": "DetectViT: Test-time Backdoor Detection for Vision Transformers via Inter-Head Attention Discrepancy",
+      "authors": [
+        "Siquan Huang",
+        "Yijiang Li",
+        "Xingfu Yan",
+        "Ningzhi Gao",
+        "Leyu Shi",
+        "Ying Gao"
+      ],
+      "summary": "Vision Transformers (ViTs) now underpin the visual encoders of most multimodal models, but this success comes at a cost: relying on third-party pretrained checkpoints leaves these systems open to backdoor attacks. Existing test-time detection methods rely on either the predicted label or intermediate embeddings, limiting their applicability across diverse tasks and incurring substantial computational overhead. In this work, we study how backdoor triggers affect the multi-head attention mechanism of ViTs and identify two distinct anomalous patterns: $\\textit{complete attention hijacking}$, causing the attention to exhibit abnormally high inter-head spatial overlap, and $\\textit{partial attention hijacking}$, causing an abnormally large variance in the concentration of the attention distribution. Motivated by these findings, we propose $\\textbf{DetectViT}$, a test-time backdoor detection method that requires neither training data, model outputs, nor any prior knowledge of the trigger. DetectViT quantifies the two hijacking phenomena via an inter-head consistency score and an inter-head entropy variance score, with thresholds estimated from a small out-of-distribution (OOD) calibration set drawn from an arbitrary source. Across four representative attacks, diverse architectures (DeiT, CLIP, and LLaVA), and downstream tasks (image classification and captioning), DetectViT substantially outperforms all baselines with as few as 64--128 OOD calibration samples, achieving a true positive rate of $100\\%$ and a false positive rate of $0.17\\%$ on BadCLIP. Notably, it introduces negligible additional overhead by relying solely on attention weights already computed during inference. Code is available at: https://github.com/siquanhuang/DetectViT.",
+      "published": "2026-11-18T03:26:33Z",
+      "updated": "2026-11-18T03:26:33Z",
+      "paper_url": "http://arxiv.org/abs/2611.23770v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23770v1",
+      "categories": [
+        "cs.CV",
+        "cs.CR"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.252,
+          "level": "low",
+          "reason": "关键词命中：SAM、vision transformer；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "SAM",
+            "vision transformer"
+          ],
+          "llm_reason": "论文核心对象是视觉Transformer（ViT）及其在多模态模型（CLIP、LLaVA）中的视觉编码器，涉及多模态模型安全与测试时检测，与研究方向中的vision transformer、multimodal remote sensing有方法层面的关联；但论文不涉及遥感数据、遥感基础模型或SAM/GeoSAM，属于通用视觉模型安全研究，与遥感基础模型的直接相关性较低。"
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.177,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.252,
+        "level": "low",
+        "reason": "关键词命中：SAM、vision transformer；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "SAM",
+          "vision transformer"
+        ],
+        "llm_reason": "论文核心对象是视觉Transformer（ViT）及其在多模态模型（CLIP、LLaVA）中的视觉编码器，涉及多模态模型安全与测试时检测，与研究方向中的vision transformer、multimodal remote sensing有方法层面的关联；但论文不涉及遥感数据、遥感基础模型或SAM/GeoSAM，属于通用视觉模型安全研究，与遥感基础模型的直接相关性较低。"
+      },
+      "chinese_summary": {
+        "problem": "论文研究视觉Transformer（ViT）在测试阶段的后门检测问题：依赖第三方预训练权重使ViT及其多模态模型面临后门攻击，而现有检测方法依赖预测标签或中间嵌入，跨任务适用性差且计算开销大。",
+        "method": "作者分析后门触发器对ViT多头注意力的影响，发现两种异常模式——完全注意力劫持（头间空间重叠异常高）和部分注意力劫持（注意力分布集中度方差异常大），据此提出DetectViT，用头间一致性分数和头间熵方差分数量化这两种现象，并用少量任意来源的OOD校准集估计阈值，无需训练数据、模型输出或触发器先验知识。",
+        "innovation": "一是首次从多头注意力机制角度刻画后门触发的两种异常模式（完全/部分注意力劫持）；二是提出无需训练数据、模型输出和触发器先验的测试时检测方法，仅依赖推理中已计算的注意力权重，额外开销可忽略；三是仅需64–128个OOD校准样本即可跨攻击、跨架构、跨任务工作。",
+        "evidence": "摘要报告在四种代表性攻击、多种架构（DeiT、CLIP、LLaVA）和下游任务（图像分类与描述）上显著优于所有基线；在BadCLIP上达到100%真阳性率和0.17%假阳性率，仅需64–128个OOD校准样本；代码已开源。",
+        "limitations": "摘要未说明OOD校准集来源选择对阈值估计的影响、对自适应攻击的鲁棒性，以及在遥感等特定领域数据上的泛化表现；检测依赖注意力权重，对非ViT架构或注意力被修改的模型是否适用需阅读全文确认。",
+        "why_relevant": "论文核心对象是视觉Transformer（ViT）及其在多模态模型（CLIP、LLaVA）中的视觉编码器，涉及多模态模型安全与测试时检测，与研究方向中的vision transformer、multimodal remote sensing有方法层面的关联；但论文不涉及遥感数据、遥感基础模型或SAM/GeoSAM，属于通用视觉模型安全研究，与遥感基础模型的直接相关性较低。"
+      },
+      "first_seen_at": "2026-11-19T02:54:41.868537+00:00",
+      "last_seen_at": "2026-11-19T02:54:41.868537+00:00",
       "retained_from_previous_run": false
     },
     {
@@ -4354,7 +4526,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.11692v1",
@@ -4835,7 +5007,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.22299v1",
@@ -4912,7 +5084,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.09275v1",
@@ -6286,7 +6458,7 @@
       },
       "first_seen_at": "2026-11-18T03:17:06.711752+00:00",
       "last_seen_at": "2026-11-18T03:17:06.711752+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.11613v1",
@@ -6781,23 +6953,23 @@
     }
   ],
   "stats": {
-    "paper_count": 81,
-    "new_paper_count": 10,
+    "paper_count": 83,
+    "new_paper_count": 2,
     "days": 1,
     "collection_mode": "incremental",
-    "collection_cutoff_iso": "2026-11-17T04:17:21.739783+00:00",
+    "collection_cutoff_iso": "2026-11-18T03:17:06.711752+00:00",
     "max_per_topic": 25,
     "llm_enabled": true,
     "llm_concurrency": 2,
     "recent_history_days": 45,
     "successful_fetches": 4,
     "failed_fetches": 0,
-    "retained_paper_count": 71,
-    "retained_recent_low_count": 40,
+    "retained_paper_count": 81,
+    "retained_recent_low_count": 48,
     "dropped_low_relevance_count": 0,
     "max_stored_papers": 800,
     "max_data_bytes": 8388608,
-    "data_bytes": 524147,
+    "data_bytes": 538590,
     "storage_trimmed_count": 0,
     "storage_trimmed_by_level": {
       "high": 0,
