@@ -1,6 +1,6 @@
 {
-  "generated_at": "Thu, 19 Nov 2026 02:54:41 +0000",
-  "generated_at_iso": "2026-11-19T02:54:41.868537+00:00",
+  "generated_at": "Fri, 20 Nov 2026 02:48:02 +0000",
+  "generated_at_iso": "2026-11-20T02:48:02.725421+00:00",
   "config_source": "file",
   "topics": [
     {
@@ -2385,6 +2385,85 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2611.25475v1",
+      "source": "arXiv",
+      "title": "SegAnyFruit: Learning Generalizable and Edge Deployable Fruit Instance Segmentation at Scale",
+      "authors": [
+        "Yanan Wang",
+        "Yuzheng wang",
+        "Yibin Ying",
+        "Zhenghao Fei"
+      ],
+      "summary": "Deploying fruit instance segmentation in real agricultural settings requires generalizing across unseen species, orchards, and imaging conditions under strict onboard compute and annotation budgets. We introduce SegAnyFruit (SAF), a data construction and progressive training framework that distills foundation-model priors into lightweight, prompt-free segmenters. SAF combines generic mask pre-training, broad mid-training on automatically annotated web imagery from our curated WebFruits dataset, and human-verified agricultural refinement post-training on PaperFruits, together spanning 733K images and 9.66M whole-fruit masks across 165 fruit types. Across seven benchmarks, zero-shot SAF-RF-DETR-XL reaches 69.06 average mask AP50:95 (+4.76 over SAM 3) while remaining deployable on edge devices. SAF initialization also boosts few-shot to full-shot adaptation across five agricultural domains while mitigating catastrophic forgetting. Finally, we systematically analyze training stages, data scale, model capacity, and generative augmentation, and validate our pipeline's transferability to underwater, cell, and human segmentation. We will release our datasets, code, and SAF models.",
+      "published": "2026-11-19T04:03:32Z",
+      "updated": "2026-11-19T04:03:32Z",
+      "paper_url": "http://arxiv.org/abs/2611.25475v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.25475v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.393,
+          "level": "low",
+          "reason": "关键词命中：SAM；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "SAM"
+          ],
+          "llm_reason": "论文核心是将 SAM 类基础模型先验蒸馏为可部署的轻量分割器，涉及基础模型预训练/中训练/后训练范式、大规模自动标注数据构建与跨域泛化，与遥感基础模型关注的 SAM/GeoSAM、自监督与多模态预训练、地球观测基础模型的可迁移轻量化部署在方法论上高度同构；但应用域为农业水果而非遥感，故匹配度中等偏低。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.177,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.393,
+        "level": "low",
+        "reason": "关键词命中：SAM；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "SAM"
+        ],
+        "llm_reason": "论文核心是将 SAM 类基础模型先验蒸馏为可部署的轻量分割器，涉及基础模型预训练/中训练/后训练范式、大规模自动标注数据构建与跨域泛化，与遥感基础模型关注的 SAM/GeoSAM、自监督与多模态预训练、地球观测基础模型的可迁移轻量化部署在方法论上高度同构；但应用域为农业水果而非遥感，故匹配度中等偏低。"
+      },
+      "chinese_summary": {
+        "problem": "论文旨在解决真实农业场景中水果实例分割的部署难题：模型需要在严格的机载算力与标注预算下，对未见过的物种、果园和成像条件保持泛化能力。",
+        "method": "提出 SegAnyFruit（SAF）数据构建与渐进式训练框架，将基础模型先验蒸馏进轻量、无需提示（prompt-free）的分割器；训练分三阶段：通用掩码预训练、基于自建 WebFruits 网络图像自动标注的广泛中训练、以及在 PaperFruits 上人工核验的农业精调后训练。",
+        "innovation": "1) 构建覆盖 165 种水果、733K 图像、9.66M 全果掩码的大规模数据体系（WebFruits 自动标注 + PaperFruits 人工核验）；2) 用渐进式三阶段训练把基础模型先验蒸馏为轻量、免提示、可边缘部署的分割器；3) 系统分析训练阶段、数据规模、模型容量与生成式增广的作用，并验证流程可迁移到水下、细胞与人体分割。",
+        "evidence": "摘要给出：在七个基准上，零样本 SAF-RF-DETR-XL 达到 69.06 平均 mask AP50:95，比 SAM 3 高 4.76，且可部署于边缘设备；SAF 初始化在五个农业域上提升 few-shot 到 full-shot 的适配并缓解灾难性遗忘；数据集、代码与模型将开源。",
+        "limitations": "摘要未给出边缘设备的具体硬件、推理时延与模型参数量；未说明与 SAM 3 对比的公平性设置（如是否同输入分辨率、是否同提示条件）；WebFruits 自动标注的噪声水平与 PaperFruits 规模未量化；迁移实验（水下、细胞、人体）的具体指标未列出，需阅读全文确认。",
+        "why_relevant": "论文核心是将 SAM 类基础模型先验蒸馏为可部署的轻量分割器，涉及基础模型预训练/中训练/后训练范式、大规模自动标注数据构建与跨域泛化，与遥感基础模型关注的 SAM/GeoSAM、自监督与多模态预训练、地球观测基础模型的可迁移轻量化部署在方法论上高度同构；但应用域为农业水果而非遥感，故匹配度中等偏低。"
+      },
+      "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2611.22496v1",
       "source": "arXiv",
       "title": "DARWIN: a Geospatial Foundation Model for Marine Intelligence",
@@ -3447,6 +3526,86 @@
       "retained_from_previous_run": true
     },
     {
+      "id": "2611.25453v1",
+      "source": "arXiv",
+      "title": "Beyond Resemblance: Image Fusion Reimagined",
+      "authors": [
+        "Hao Zhang",
+        "Yumin Huang",
+        "Linfeng Tang",
+        "Junjun Jiang",
+        "Jiayi Ma"
+      ],
+      "summary": "Image fusion often lacks ground-truth fused images, forcing existing deep methods to indirectly define fusion objectives by requiring the fused image to simultaneously resemble multiple source images. However, the distinct imaging characteristics of different modalities can impose competing constraints on the fused result, potentially limiting the effective integration of their complementary information. To address this long-standing challenge facing the image fusion community, we propose ApexFuse, a novel generative image fusion paradigm that moves beyond source-resemblance constraints toward learning a general distribution of high-quality scene representations. Specifically, we develop a human-LMM-in-the-loop pipeline that leverages large multimodal generative models and iterative human feedback to translate abstract fusion objectives into reliable visual references, thereby defining the target distribution of ideal fusion outcomes. Through target-distribution-guided adaptation, we transfer the rich generative priors of pretrained FLUX to image fusion, enabling high-quality scene reconstruction conditioned on multimodal observations. Extensive experiments demonstrate that ApexFuse harmoniously integrates salient thermal targets, natural colors, and fine textures, achieving superior visual quality as well as semantic segmentation and object detection performance over previous source-resemblance methods. Moreover, ApexFuse exhibits remarkable cross-task generalization, extending from infrared-visible fusion to multi-exposure fusion, multi-focus fusion, and visible-depth fusion without additional fine-tuning.",
+      "published": "2026-11-19T03:32:47Z",
+      "updated": "2026-11-19T03:32:47Z",
+      "paper_url": "http://arxiv.org/abs/2611.25453v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.25453v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "remote_sensing_land_use",
+      "matches": [
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.311,
+          "level": "low",
+          "reason": "关键词命中：semantic segmentation；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "semantic segmentation"
+          ],
+          "llm_reason": "论文涉及语义分割评测与多模态（红外-可见光等）图像融合，与研究方向中的语义分割、多模态遥感影像处理有方法层面的关联；但其核心是通用图像融合与生成式范式，并非土地利用/覆盖分类或遥感场景分类，且未涉及多光谱、高分辨率或 SAR 遥感数据，因此与遥感土地利用分类的直接相关性有限。"
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.208,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.177,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "remote_sensing_land_use",
+        "topic_name": "遥感土地利用分类",
+        "score": 0.311,
+        "level": "low",
+        "reason": "关键词命中：semantic segmentation；arXiv 分类重合：cs.CV",
+        "keyword_hits": [
+          "semantic segmentation"
+        ],
+        "llm_reason": "论文涉及语义分割评测与多模态（红外-可见光等）图像融合，与研究方向中的语义分割、多模态遥感影像处理有方法层面的关联；但其核心是通用图像融合与生成式范式，并非土地利用/覆盖分类或遥感场景分类，且未涉及多光谱、高分辨率或 SAR 遥感数据，因此与遥感土地利用分类的直接相关性有限。"
+      },
+      "chinese_summary": {
+        "problem": "图像融合任务缺乏真实融合图像作为监督，现有深度学习方法只能通过要求融合结果同时逼近多个源图像来间接定义融合目标，但不同模态的成像特性会带来相互竞争的约束，限制互补信息的有效整合。",
+        "method": "提出 ApexFuse 生成式图像融合范式，不再依赖源图像相似性约束，而是学习高质量场景表示的通用分布；具体构建 human-LMM-in-the-loop 流程，利用大型多模态生成模型与迭代人工反馈将抽象融合目标转化为可靠视觉参考，以定义理想融合结果的目标分布，并通过目标分布引导的适配将预训练 FLUX 的生成先验迁移到图像融合中。",
+        "innovation": "一是将融合目标从“逼近源图像”重新定义为学习理想融合结果的分布，规避多模态竞争约束；二是借助 LMM 与人工反馈构建目标分布参考，并把大规模生成模型 FLUX 的先验迁移至融合任务；三是无需额外微调即可从红外-可见光融合泛化到多曝光、多聚焦和可见光-深度融合等跨任务场景。",
+        "evidence": "摘要称在红外-可见光融合上能协调显著热目标、自然色彩与细节纹理，视觉质量及语义分割、目标检测性能优于以往源相似性方法，并展示了跨任务泛化；但未给出具体数据集、指标数值或消融结果，定量证据需阅读全文确认。",
+        "limitations": "摘要未说明所依赖的大型多模态生成模型与人工反馈流程的计算开销和可扩展性；目标分布参考的构建是否引入主观偏差、跨任务泛化在遥感多光谱/SAR 等模态上的有效性均未验证；语义分割提升的具体幅度与评测设置需全文确认。",
+        "why_relevant": "论文涉及语义分割评测与多模态（红外-可见光等）图像融合，与研究方向中的语义分割、多模态遥感影像处理有方法层面的关联；但其核心是通用图像融合与生成式范式，并非土地利用/覆盖分类或遥感场景分类，且未涉及多光谱、高分辨率或 SAR 遥感数据，因此与遥感土地利用分类的直接相关性有限。"
+      },
+      "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "retained_from_previous_run": false
+    },
+    {
       "id": "2610.07819v1",
       "source": "arXiv",
       "title": "$α$Transfer: Coefficient Transfer for Efficient Model Merging",
@@ -3530,6 +3689,93 @@
       "first_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "last_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.25476v1",
+      "source": "arXiv",
+      "title": "WeightCode: Installing New Capabilities into Neural Networks via Weight-Space Programming",
+      "authors": [
+        "Bo Li",
+        "Taoyong Cui",
+        "Bob Zhang",
+        "Mengran Li",
+        "Chengyang Zhang",
+        "Yang Zhang",
+        "Pheng Ann Heng",
+        "Wanli Ouyang",
+        "Zhenfei Yin",
+        "Yingcheng Wu",
+        "Ling Yang"
+      ],
+      "summary": "Neural networks encode learned capabilities in their weights, yet extending those capabilities with explicit task knowledge remains a fundamental challenge. Here we show that Weight-Space Programming (WSP), in which executable programs read, construct or modify a network's weights directly, can install new capabilities within trained neural networks. WeightCode, a WSP framework, uses a frozen language model to write executable weight programs that install new computations into trained neural networks using task knowledge and their existing weights, without gradient-based training. Once installed, the new capabilities run independently of the language model. Given a grammar or eight demonstrations, weight programs enable previously unseen command compositions (0% to 99.8% exact match) and a new pickup action (0% to 98.4% success), while preserving the original command and navigation capabilities. On ImageNet, four weight programs achieve net gains of 8.84-17.62 points while preserving clean accuracy, outperforming the best of eight fine-tuning methods under matched examples, checks, and retention constraints. In a Vision Transformer, causal interventions show that installed noise-correction gates drive robustness gains, while their selective activation preserves clean accuracy. Rerun on five independently trained Vision Transformers without further language model calls, ten weight programs retain 83-110% of their source-network gains on average, whereas copying their fixed weight edits yields negligible gains. Six programs written for an already edited network add 5.23-14.50 points of contrast robustness while retaining the previously installed noise gain. Together, these results establish WSP as a new route to acquiring and accumulating capabilities in trained neural networks through reusable weight programs.",
+      "published": "2026-11-19T04:04:29Z",
+      "updated": "2026-11-19T04:04:29Z",
+      "paper_url": "http://arxiv.org/abs/2611.25476v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.25476v1",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.3,
+          "level": "low",
+          "reason": "关键词命中：vision transformer；arXiv 分类重合：cs.AI、cs.LG",
+          "keyword_hits": [
+            "vision transformer"
+          ],
+          "llm_reason": "该工作涉及 Vision Transformer 的权重级能力注入与鲁棒性分析，与遥感基础模型中视觉基础模型、ViT 及自监督预训练模型的能力扩展和适配有一定方法关联；但论文未涉及遥感数据、多模态遥感或 SAM/GeoSAM，因此与我的核心方向仅为弱相关。"
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.3,
+        "level": "low",
+        "reason": "关键词命中：vision transformer；arXiv 分类重合：cs.AI、cs.LG",
+        "keyword_hits": [
+          "vision transformer"
+        ],
+        "llm_reason": "该工作涉及 Vision Transformer 的权重级能力注入与鲁棒性分析，与遥感基础模型中视觉基础模型、ViT 及自监督预训练模型的能力扩展和适配有一定方法关联；但论文未涉及遥感数据、多模态遥感或 SAM/GeoSAM，因此与我的核心方向仅为弱相关。"
+      },
+      "chinese_summary": {
+        "problem": "论文旨在解决如何在不进行梯度训练的情况下，向已训练好的神经网络中显式安装新的任务能力，同时保留原有能力。",
+        "method": "提出 Weight-Space Programming（WSP）框架 WeightCode，利用冻结的语言模型编写可执行的权重程序，直接读取、构造或修改目标网络的权重，从而把新计算安装进已训练网络；安装后新能力可脱离语言模型独立运行。",
+        "innovation": "一是将“程序化修改权重”作为向已训练网络注入新能力的新范式，无需梯度训练；二是用冻结语言模型根据任务知识和现有权重生成可执行权重程序，并可在多个独立训练的同架构网络上复用；三是通过因果干预分析安装的权重门控机制，说明其选择性激活可兼顾鲁棒性提升与干净精度保持。",
+        "evidence": "摘要给出可核验结果：在命令组合任务上从0%提升到99.8% exact match，新拾取动作从0%到98.4%成功率，并保留原命令与导航能力；ImageNet 上四个权重程序净增益8.84–17.62点且保持干净精度，在匹配样例、检查与保留约束下优于八种微调方法中的最佳者；在 Vision Transformer 上因果干预显示安装的噪声校正门控驱动鲁棒性增益；五个独立训练的 ViT 上十个权重程序平均保留源网络增益的83–110%，而复制固定权重编辑增益可忽略；为已编辑网络编写的六个程序增加5.23–14.50点对比度鲁棒性并保留先前噪声增益。",
+        "limitations": "摘要未说明权重程序的具体表示、搜索或生成机制、计算开销、对网络架构与任务类型的适用范围，也未给出与遥感领域模型或大规模基础模型结合的验证；跨架构泛化与安全性需阅读全文确认。",
+        "why_relevant": "该工作涉及 Vision Transformer 的权重级能力注入与鲁棒性分析，与遥感基础模型中视觉基础模型、ViT 及自监督预训练模型的能力扩展和适配有一定方法关联；但论文未涉及遥感数据、多模态遥感或 SAM/GeoSAM，因此与我的核心方向仅为弱相关。"
+      },
+      "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "retained_from_previous_run": false
     },
     {
       "id": "2610.09535v1",
@@ -4114,7 +4360,7 @@
       },
       "first_seen_at": "2026-11-19T02:54:41.868537+00:00",
       "last_seen_at": "2026-11-19T02:54:41.868537+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.23770v1",
@@ -4198,7 +4444,7 @@
       },
       "first_seen_at": "2026-11-19T02:54:41.868537+00:00",
       "last_seen_at": "2026-11-19T02:54:41.868537+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.09392v1",
@@ -5412,6 +5658,83 @@
       "first_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "last_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.25458v1",
+      "source": "arXiv",
+      "title": "RemoteVLPG: How to Obtain a Specific VLM for Language-Guided Path Generation on Remote Sensing Images?",
+      "authors": [
+        "Junzhe Dang",
+        "Mengmeng Zhang",
+        "Yuxiang Zhang",
+        "Wei Li"
+      ],
+      "summary": "We study how to obtain a task-specific Vision-Language Model (VLM) for language-guided path generation between start and end points on remote sensing images. We explore this question from three aspects. First, we implement three widely used architectural approaches and compare their performance. Second, we design a scalable method for constructing pre-training data and build an effective pre-training dataset with a degree of diversity. Methods trained on this dataset achieve promising zero-shot performance. Third, we construct three benchmarks that support stratified evaluation and design three metrics for path generation. We investigate this problem through extensive experiments. The results show that the zero-shot performance of methods trained on the constructed pre-training dataset can exceed that of some advanced commercial VLMs. Code and Dataset can be available at https://github.com/jzdang/RemoteVLPG",
+      "published": "2026-11-19T03:39:24Z",
+      "updated": "2026-11-19T03:39:24Z",
+      "paper_url": "http://arxiv.org/abs/2611.25458v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.25458v1",
+      "categories": [
+        "cs.CV"
+      ],
+      "seed_topic": "remote_sensing_land_use",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.208,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": [],
+          "llm_reason": "论文涉及遥感图像上的视觉语言模型任务专用化与预训练数据构建，与遥感多模态模型和遥感智能解译方向相关；但不涉及SAM/GeoSAM、视觉基础模型架构或自监督学习，与遥感基础模型核心关注点重合有限。"
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.186,
+          "level": "low",
+          "reason": "关键词命中：remote sensing；arXiv 分类重合：cs.CV",
+          "keyword_hits": [
+            "remote sensing"
+          ]
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.146,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.CV",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.208,
+        "level": "low",
+        "reason": "arXiv 分类重合：cs.CV",
+        "keyword_hits": [],
+        "llm_reason": "论文涉及遥感图像上的视觉语言模型任务专用化与预训练数据构建，与遥感多模态模型和遥感智能解译方向相关；但不涉及SAM/GeoSAM、视觉基础模型架构或自监督学习，与遥感基础模型核心关注点重合有限。"
+      },
+      "chinese_summary": {
+        "problem": "论文研究如何获得一个面向遥感图像上由语言引导的起终点路径生成任务的专用视觉语言模型（VLM）。",
+        "method": "论文从三方面展开：实现并比较三种常用架构；设计可扩展的预训练数据构建方法并构建多样化预训练数据集；构建三个支持分层评测的基准并设计三个路径生成指标，通过大量实验进行分析。",
+        "innovation": "一是系统比较三种主流架构在该任务上的表现；二是提出可扩展的预训练数据构建方法，所构建数据集训练出的方法具备较好的零样本性能；三是构建三个支持分层评测的基准及三个路径生成指标。",
+        "evidence": "摘要称在所构建预训练数据集上训练的方法零样本性能可超过部分先进商业VLM，并提到构建了三个基准和三个指标；但未给出具体数值、对比模型名称或消融结果，需阅读全文核验。",
+        "limitations": "摘要未说明三种架构的具体类型、预训练数据规模与来源、基准场景覆盖范围及评测细节；零样本超越商业VLM的结论缺乏具体数据支撑，需全文确认。",
+        "why_relevant": "论文涉及遥感图像上的视觉语言模型任务专用化与预训练数据构建，与遥感多模态模型和遥感智能解译方向相关；但不涉及SAM/GeoSAM、视觉基础模型架构或自监督学习，与遥感基础模型核心关注点重合有限。"
+      },
+      "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "retained_from_previous_run": false
     },
     {
       "id": "2610.09455v1",
@@ -6950,26 +7273,104 @@
       "first_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "last_seen_at": "2026-10-07T01:11:05.230815+00:00",
       "retained_from_previous_run": true
+    },
+    {
+      "id": "2611.25422v1",
+      "source": "arXiv",
+      "title": "From Sequence Uncertainty to Phenotype Hypotheses: Uncertainty-Conditioned Inference over Biomedical Knowledge Graphs",
+      "authors": [
+        "Huixin Zhan",
+        "Jason H. Moore"
+      ],
+      "summary": "Genomic foundation models provide variant-level evidence, but connecting that evidence to phenotype hypotheses requires accounting for uncertainty throughout structured reasoning. We introduce an uncertainty-conditioned path-energy framework that converts sequence predictions and calibrated predictive uncertainty into explicit distributions over graph-supported phenotype hypotheses, without patient-level phenotype supervision. An interpretable learned energy scores admissible gene--disease--phenotype routes, query uncertainty controls the target temperature, and path probabilities are aggregated into phenotype hypotheses. This formulation makes evidence quality an explicit determinant of hypothesis breadth while retaining traceable multi-path support. Exact normalization over enumerable candidate sets provides a reference for evaluating a Hastings-corrected learned revision operator. On AlzKB and Hetionet, phenotype-level entropy tracks upstream uncertainty, with Spearman correlations of 0.951 and 0.878, respectively; ablations identify the contribution of uncertainty conditioning. In masked-edge recovery, the model exceeds chance and degree-matched probability-permutation controls. Training the energy under the uncertainty-dependent temperature yields higher held-out recall@10 than training under a constant temperature of comparable magnitude. Under gene hold-out, recall@10 exceeds that of a trained DistMult embedding on 24 of 30 graph masks (0.183 versus 0.123); this difference is attributable mainly to three genes with many variants and is not established for all genes. These results establish an uncertainty-aware interface from genomic predictions to graph-supported phenotype hypotheses that combines interpretable probability allocation with held-out association recovery of explicitly stated scope.",
+      "published": "2026-11-19T03:02:19Z",
+      "updated": "2026-11-19T03:02:19Z",
+      "paper_url": "http://arxiv.org/abs/2611.25422v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.25422v1",
+      "categories": [
+        "cs.LG",
+        "q-bio.GN"
+      ],
+      "seed_topic": "foundation_models_remote_sensing",
+      "matches": [
+        {
+          "topic_id": "foundation_models_remote_sensing",
+          "topic_name": "遥感基础模型",
+          "score": 0.136,
+          "level": "low",
+          "reason": "关键词命中：foundation model；arXiv 分类重合：cs.LG",
+          "keyword_hits": [
+            "foundation model"
+          ],
+          "llm_reason": "匹配度较低：论文仅在摘要中提及 genomic foundation models，属于生物医学图推理与不确定性建模，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感及遥感智能解译无实质关联；仅共享 foundation model 概念与 cs.LG 分类，方法上不涉及视觉 Transformer、自监督视觉预训练或遥感数据。"
+        },
+        {
+          "topic_id": "change_detection",
+          "topic_name": "遥感变化检测",
+          "score": 0.115,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "remote_sensing_land_use",
+          "topic_name": "遥感土地利用分类",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        },
+        {
+          "topic_id": "glacier_segmentation",
+          "topic_name": "冰川分割与冰湖提取",
+          "score": 0.083,
+          "level": "low",
+          "reason": "arXiv 分类重合：cs.LG",
+          "keyword_hits": []
+        }
+      ],
+      "best_match": {
+        "topic_id": "foundation_models_remote_sensing",
+        "topic_name": "遥感基础模型",
+        "score": 0.136,
+        "level": "low",
+        "reason": "关键词命中：foundation model；arXiv 分类重合：cs.LG",
+        "keyword_hits": [
+          "foundation model"
+        ],
+        "llm_reason": "匹配度较低：论文仅在摘要中提及 genomic foundation models，属于生物医学图推理与不确定性建模，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感及遥感智能解译无实质关联；仅共享 foundation model 概念与 cs.LG 分类，方法上不涉及视觉 Transformer、自监督视觉预训练或遥感数据。"
+      },
+      "chinese_summary": {
+        "problem": "论文要解决的问题是如何将基因组基础模型产生的变异级证据与预测不确定性结合，在无需患者级表型监督的情况下，通过结构化推理得到可追溯的表型假设。",
+        "method": "提出不确定性条件化的路径能量框架：将序列预测及校准后的预测不确定性转换为图支持的表型假设分布，用可解释的学习能量对基因-疾病-表型路径打分，由查询不确定性控制温度并聚合路径概率为表型假设。",
+        "innovation": "一是把预测不确定性显式作为假设广度与证据质量的调节因素，而非仅做点预测；二是用可解释路径能量在生物医学知识图上实现可追溯的多路径概率分配；三是给出精确归一化参考并评估 Hastings 校正的学习修正算子，同时通过消融验证不确定性条件化的贡献。",
+        "evidence": "在 AlzKB 与 Hetionet 上，表型级熵与上游不确定性的 Spearman 相关分别为 0.951 和 0.878；掩码边恢复任务超过随机与度匹配置换控制；不确定性依赖温度训练在留出集 recall@10 上优于同量级常数温度；基因留出下 30 个图掩码中有 24 个超过训练好的 DistMult（0.183 对 0.123），但作者明确指出该差异主要来自三个多变异基因，并非对所有基因成立。",
+        "limitations": "摘要未说明基因组基础模型的具体类型与规模，也未涉及遥感或视觉基础模型；实验仅限两个生物医学知识图谱，基因留出优势的泛化性作者已声明有限；不确定性校准方式、能量函数可解释性的具体形式及计算开销需阅读全文确认。",
+        "why_relevant": "匹配度较低：论文仅在摘要中提及 genomic foundation models，属于生物医学图推理与不确定性建模，与遥感基础模型、视觉基础模型、SAM/GeoSAM、多模态遥感及遥感智能解译无实质关联；仅共享 foundation model 概念与 cs.LG 分类，方法上不涉及视觉 Transformer、自监督视觉预训练或遥感数据。"
+      },
+      "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
+      "retained_from_previous_run": false
     }
   ],
   "stats": {
-    "paper_count": 83,
-    "new_paper_count": 2,
+    "paper_count": 88,
+    "new_paper_count": 5,
     "days": 1,
     "collection_mode": "incremental",
-    "collection_cutoff_iso": "2026-11-18T03:17:06.711752+00:00",
+    "collection_cutoff_iso": "2026-11-19T02:54:41.868537+00:00",
     "max_per_topic": 25,
     "llm_enabled": true,
     "llm_concurrency": 2,
     "recent_history_days": 45,
     "successful_fetches": 4,
     "failed_fetches": 0,
-    "retained_paper_count": 81,
-    "retained_recent_low_count": 48,
+    "retained_paper_count": 83,
+    "retained_recent_low_count": 50,
     "dropped_low_relevance_count": 0,
     "max_stored_papers": 800,
     "max_data_bytes": 8388608,
-    "data_bytes": 538590,
+    "data_bytes": 571274,
     "storage_trimmed_count": 0,
     "storage_trimmed_by_level": {
       "high": 0,
