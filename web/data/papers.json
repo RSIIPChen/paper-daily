@@ -1,6 +1,6 @@
 {
-  "generated_at": "Fri, 20 Nov 2026 02:48:02 +0000",
-  "generated_at_iso": "2026-11-20T02:48:02.725421+00:00",
+  "generated_at": "Sat, 21 Nov 2026 02:57:07 +0000",
+  "generated_at_iso": "2026-11-21T02:57:07.736059+00:00",
   "config_source": "file",
   "topics": [
     {
@@ -2461,7 +2461,7 @@
       },
       "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
       "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.22496v1",
@@ -3603,7 +3603,7 @@
       },
       "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
       "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.07819v1",
@@ -3775,7 +3775,7 @@
       },
       "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
       "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.09535v1",
@@ -5734,7 +5734,7 @@
       },
       "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
       "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2610.09455v1",
@@ -7350,27 +7350,27 @@
       },
       "first_seen_at": "2026-11-20T02:48:02.725421+00:00",
       "last_seen_at": "2026-11-20T02:48:02.725421+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     }
   ],
   "stats": {
     "paper_count": 88,
-    "new_paper_count": 5,
+    "new_paper_count": 0,
     "days": 1,
     "collection_mode": "incremental",
-    "collection_cutoff_iso": "2026-11-19T02:54:41.868537+00:00",
+    "collection_cutoff_iso": "2026-11-20T02:48:02.725421+00:00",
     "max_per_topic": 25,
     "llm_enabled": true,
     "llm_concurrency": 2,
     "recent_history_days": 45,
     "successful_fetches": 4,
     "failed_fetches": 0,
-    "retained_paper_count": 83,
-    "retained_recent_low_count": 50,
+    "retained_paper_count": 88,
+    "retained_recent_low_count": 55,
     "dropped_low_relevance_count": 0,
     "max_stored_papers": 800,
     "max_data_bytes": 8388608,
-    "data_bytes": 571274,
+    "data_bytes": 571269,
     "storage_trimmed_count": 0,
     "storage_trimmed_by_level": {
       "high": 0,
