@@ -1,6 +1,6 @@
 {
-  "generated_at": "Thu, 26 Nov 2026 03:54:23 +0000",
-  "generated_at_iso": "2026-11-26T03:54:23.589131+00:00",
+  "generated_at": "Fri, 27 Nov 2026 03:54:33 +0000",
+  "generated_at_iso": "2026-11-27T03:54:33.073167+00:00",
   "config_source": "file",
   "topics": [
     {
@@ -675,7 +675,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.03826v1",
@@ -1438,7 +1438,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.27290v1",
@@ -2199,7 +2199,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.26088v1",
@@ -3050,7 +3050,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.25475v1",
@@ -3939,7 +3939,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32625v1",
@@ -4436,7 +4436,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2608.09497v1",
@@ -4679,7 +4679,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32474v1",
@@ -4852,7 +4852,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.33772v1",
@@ -4936,7 +4936,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32225v1",
@@ -5350,7 +5350,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32532v1",
@@ -5839,7 +5839,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32598v1",
@@ -6332,7 +6332,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32696v1",
@@ -6991,7 +6991,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.33915v1",
@@ -7085,7 +7085,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32816v1",
@@ -7246,7 +7246,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32877v1",
@@ -7645,7 +7645,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32424v1",
@@ -8576,7 +8576,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.32257v1",
@@ -8907,7 +8907,7 @@
       },
       "first_seen_at": "2026-11-26T03:54:23.589131+00:00",
       "last_seen_at": "2026-11-26T03:54:23.589131+00:00",
-      "retained_from_previous_run": false
+      "retained_from_previous_run": true
     },
     {
       "id": "2611.25422v1",
@@ -8990,22 +8990,22 @@
   ],
   "stats": {
     "paper_count": 107,
-    "new_paper_count": 18,
+    "new_paper_count": 0,
     "days": 1,
     "collection_mode": "incremental",
-    "collection_cutoff_iso": "2026-11-25T04:44:51.709559+00:00",
+    "collection_cutoff_iso": "2026-11-26T03:54:23.589131+00:00",
     "max_per_topic": 25,
     "llm_enabled": true,
     "llm_concurrency": 2,
     "recent_history_days": 45,
     "successful_fetches": 4,
     "failed_fetches": 0,
-    "retained_paper_count": 89,
-    "retained_recent_low_count": 52,
+    "retained_paper_count": 107,
+    "retained_recent_low_count": 67,
     "dropped_low_relevance_count": 0,
     "max_stored_papers": 800,
     "max_data_bytes": 8388608,
-    "data_bytes": 698656,
+    "data_bytes": 698638,
     "storage_trimmed_count": 0,
     "storage_trimmed_by_level": {
       "high": 0,
